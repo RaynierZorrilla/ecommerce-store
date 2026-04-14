@@ -1,4 +1,5 @@
 import { About } from "@/components/about"
+import BrandCarousel from "@/components/BrandCarousel"
 import { Features } from "@/components/features"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
@@ -11,6 +12,7 @@ export function HomePage() {
     <main className="min-h-screen bg-background">
       <Header />
       <Hero />
+      <BrandCarousel />
       <Features />
       <Product />
       <Testimonials />
