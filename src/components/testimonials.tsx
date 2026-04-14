@@ -27,11 +27,11 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 bg-secondary/30">
+    <section id="testimonials" className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">What Our Customers Say</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-pretty">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What Our Customers Say</h2>
+          <p className="text-white/85 max-w-2xl mx-auto text-pretty">
             Join thousands of satisfied customers who have restored their headlights with our kit.
           </p>
         </div>
@@ -44,7 +44,7 @@ export function Testimonials() {
 
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                    <Star key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
                   ))}
                 </div>
 

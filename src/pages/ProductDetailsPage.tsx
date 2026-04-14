@@ -1,9 +1,12 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { ArrowLeft, ShoppingCart } from "lucide-react"
+import { toast } from "sonner"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { useCart } from "@/context/cart-context"
+import { Footer } from "@/components/footer"
 
 const steps = [
   {
@@ -43,10 +46,24 @@ const steps = [
 
 export function ProductDetailsPage() {
   const [showMore, setShowMore] = useState(false)
+  const { addItem } = useCart()
+
+  const handleAddToCart = () => {
+    addItem({
+      id: "small-kit-4-cars",
+      name: "Small kit - 4 cars",
+      price: 42.99,
+      image: "/small-kit.png",
+    })
+    toast.success("Item added to cart", {
+      description: "Small kit - 4 cars",
+    })
+  }
 
   return (
-    <main className="min-h-screen bg-background py-12">
-      <div className="container mx-auto px-4">
+    <>
+      <main className="min-h-screen bg-background py-12">
+        <div className="container mx-auto px-4">
         <Link
           to="/"
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
@@ -79,15 +96,11 @@ export function ProductDetailsPage() {
                   <span className="text-muted-foreground">(Actual price $39.99 + $3 shipping)</span>
                 </div>
 
-                <Button asChild size="lg" className="w-full md:w-auto">
-                  <a
-                    href="https://newerlightskit.com/product-details/product/655b3ea68dfbc3613a37392f"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                <Button size="lg" className="w-full md:w-auto" onClick={handleAddToCart}>
+                  <>
                     <ShoppingCart className="mr-2 h-5 w-5" />
                     Add to Cart
-                  </a>
+                  </>
                 </Button>
 
                 <div className="space-y-3 text-sm text-muted-foreground mt-6">
@@ -144,7 +157,7 @@ export function ProductDetailsPage() {
                     onClick={() => setShowMore((prev) => !prev)}
                     className="text-primary font-medium hover:underline"
                   >
-                    {showMore ? "Mostrar menos" : "mostrar mas"}
+                    {showMore ? "Show less" : "Show more"}
                   </button>
                 </div>
               </div>
@@ -171,7 +184,9 @@ export function ProductDetailsPage() {
             ))}
           </div>
         </section>
-      </div>
-    </main>
+        </div>
+      </main>
+      <Footer />
+    </>
   )
 }

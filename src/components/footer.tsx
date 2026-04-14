@@ -35,28 +35,32 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-secondary/50 border-t border-border">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
-          <div className="lg:col-span-2">
-            <a href="#" className="flex items-center gap-2 mb-4">
-              <img src="/newerlights-icon.png" alt="Newer Lights" className="w-24 h-24 object-contain" />
-            </a>
+    <footer className="relative border-t border-white/20 overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/car-car.jpg')" }}
+      />
+      <div className="absolute inset-0 bg-black/80" />
 
-            <p className="text-muted-foreground mb-6 max-w-sm text-pretty">
+      <div className="container mx-auto px-4 py-12 relative z-10">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+          <div className="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <img src="/newerlights-icon.png" alt="Newer Lights" className="w-40 h-40 object-contain" />
+
+            <p className="text-white/80 mb-6 max-w-md text-pretty">
               At Newerlights Headlights Restoration, we are dedicated to enhancing your driving experience by ensuring
               crystal-clear visibility on the road. With a passion for automotive safety and a commitment to
               excellence, we&apos;ve established ourselves as a leading provider of headlight restoration services.
             </p>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center lg:justify-start gap-4">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
+                  className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-colors"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
@@ -66,12 +70,15 @@ export function Footer() {
           </div>
 
           {footerLinks.map((section, index) => (
-            <div key={index}>
-              <h3 className="font-semibold text-foreground mb-4">{section.title}</h3>
-              <ul className="space-y-3">
+            <div key={index} className="text-center md:text-left">
+              <h3 className="font-semibold text-white mb-4">{section.title}</h3>
+              <ul className="space-y-2.5">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a href={link.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+                    <a
+                      href={link.href}
+                      className="text-white/80 hover:text-white transition-colors text-sm"
+                    >
                       {link.label}
                     </a>
                   </li>
@@ -81,14 +88,14 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">© 2023 Newerlights LLC All rights reserved.</p>
+        <div className="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+          <p className="text-sm text-white/80">© 2023 Newerlights LLC All rights reserved.</p>
 
-          <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">
+          <div className="flex items-center gap-6 text-sm text-white/80">
+            <a href="#" className="hover:text-white transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-foreground transition-colors">
+            <a href="#" className="hover:text-white transition-colors">
               Terms of Service
             </a>
           </div>

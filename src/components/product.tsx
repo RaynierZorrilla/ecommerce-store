@@ -30,20 +30,19 @@ export function Product() {
               <div className="grid md:grid-cols-2">
                 <div className="relative bg-secondary/50 p-8 flex items-center justify-center min-h-[300px]">
                   <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">Most Popular</Badge>
-                  <div className="text-center">
+                  <Link to="/product-details">
                     <img
                       src="/small-kit.png"
                       alt="Newer Lights Restoration Kit"
                       className="mx-auto rounded-2xl object-contain w-80 h-80"
                     />
-                    <p className="mt-4 text-sm text-muted-foreground">Headlight Restoration Kit</p>
-                  </div>
+                  </Link>
                 </div>
 
                 <div className="p-8">
                   <div className="flex items-center gap-2 mb-4">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                      <Star key={i} className="w-5 h-5 fill-yellow-500 text-yellow-500" />
                     ))}
                     <span className="text-sm text-muted-foreground ml-2">(2,847 reviews)</span>
                   </div>

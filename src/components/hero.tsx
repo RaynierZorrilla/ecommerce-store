@@ -5,21 +5,39 @@ import { Button } from "@/components/ui/button"
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background" />
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/video_full_hd.mp4" type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-black/55" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/25 via-black/30 to-black/60" />
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <Badge variant="secondary" className="mb-6 px-4 py-2">
+          <Badge variant="secondary" className="mb-6 px-4 py-2 bg-white/15 text-white border-white/20">
             <Sparkles className="w-4 h-4 mr-2" />
             Trusted Since 2009
           </Badge>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 text-balance">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 text-balance">
             Restore Your Headlights
-            <span className="text-primary block mt-2">Like New in 5 Minutes</span>
+            <span
+              className="text-primary block mt-2"
+              style={{
+                textShadow:
+                  "-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff",
+              }}
+            >
+              Like New in 5 Minutes
+            </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty">
+          <p className="text-lg md:text-xl text-white/85 mb-8 max-w-2xl mx-auto text-pretty">
             Professional-grade headlight restoration kit used by Mercedes, BMW, Porsche, and more. Get crystal-clear
             headlights without expensive replacements.
           </p>
@@ -33,17 +51,17 @@ export function Hero() {
             </Button>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-white/85">
             <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-primary" />
+              <Shield className="w-5 h-5 text-primary text-white" />
               <span>30-Day Guarantee</span>
             </div>
             <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5 text-primary" />
+              <Clock className="w-5 h-5 text-primary text-white" />
               <span>5-Minute Application</span>
             </div>
             <div className="flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-primary" />
+              <Sparkles className="w-5 h-5 text-primary text-white" />
               <span>Pro Results</span>
             </div>
           </div>
