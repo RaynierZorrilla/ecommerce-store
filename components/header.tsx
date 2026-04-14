@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -19,10 +20,7 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <a href="#" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">N</span>
-            </div>
-            <span className="font-bold text-xl text-foreground">Newer Lights</span>
+            <Image src="/newerlights-icon.png" alt="Newer Lights" width={96} height={96} />
           </a>
 
           <nav className="hidden md:flex items-center gap-8">

@@ -1,9 +1,10 @@
-import { Instagram, Facebook, Twitter } from "lucide-react"
+import { Instagram, Facebook, Music2 } from "lucide-react"
+import Image from "next/image"
 
 const socialLinks = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "X (Twitter)" },
+  { icon: Instagram, href: "https://www.instagram.com/newerlights/", label: "Instagram" },
+  { icon: Facebook, href: "https://www.facebook.com/newerlightsllc/", label: "Facebook" },
+  { icon: Music2, href: "https://www.tiktok.com/@newerlightkits6", label: "TikTok" },
 ]
 
 const footerLinks = [
@@ -40,14 +41,11 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">N</span>
-              </div>
-              <span className="font-bold text-xl text-foreground">Newer Lights</span>
+              <Image src="/newerlights-icon.png" alt="Newer Lights" width={96} height={96} />
             </a>
             
             <p className="text-muted-foreground mb-6 max-w-sm text-pretty">
-              Professional headlight restoration kits trusted by dealerships and car enthusiasts worldwide since 2009.
+              At Newerlights Headlights Restoration, we are dedicated to enhancing your driving experience by ensuring crystal-clear visibility on the road. With a passion for automotive safety and a commitment to excellence, we've established ourselves as a leading provider of headlight restoration services.
             </p>
             
             <div className="flex items-center gap-4">
@@ -55,6 +53,8 @@ export function Footer() {
                 <a
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
                   aria-label={social.label}
                 >
@@ -85,7 +85,7 @@ export function Footer() {
         
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            2024 Newer Lights Kits. All rights reserved.
+            © 2023 Newerlights LLC All rights reserved.
           </p>
           
           <div className="flex items-center gap-6 text-sm text-muted-foreground">

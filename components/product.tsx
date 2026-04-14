@@ -2,6 +2,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Check, Star, ShoppingCart } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
 
 const features = [
   "Professional-grade restoration formula",
@@ -34,9 +36,14 @@ export function Product() {
                     Most Popular
                   </Badge>
                   <div className="text-center">
-                    <div className="w-48 h-48 mx-auto rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center border border-primary/20">
-                      <div className="text-6xl font-bold text-primary">N</div>
-                    </div>
+                    <Image
+                      src="/small-kit.png"
+                      alt="Newer Lights Restoration Kit"
+                      width={320}
+                      height={320}
+                      className="mx-auto rounded-2xl object-contain"
+                      priority
+                    />
                     <p className="mt-4 text-sm text-muted-foreground">Headlight Restoration Kit</p>
                   </div>
                 </div>
@@ -49,9 +56,11 @@ export function Product() {
                     <span className="text-sm text-muted-foreground ml-2">(2,847 reviews)</span>
                   </div>
                   
+                  <Link href="/product-details">
                   <h3 className="text-2xl font-bold text-foreground mb-2">
                     Newer Lights Restoration Kit
                   </h3>
+                  </Link>
                   
                   <div className="flex items-baseline gap-2 mb-6">
                     <span className="text-4xl font-bold text-primary">$42.99</span>
@@ -68,9 +77,11 @@ export function Product() {
                     ))}
                   </ul>
                   
-                  <Button size="lg" className="w-full text-lg py-6">
-                    <ShoppingCart className="w-5 h-5 mr-2" />
-                    Add to Cart
+                  <Button asChild size="lg" className="w-full text-lg py-6">
+                    <Link href="/product-details">
+                      <ShoppingCart className="w-5 h-5 mr-2" />
+                      View Product Details
+                    </Link>
                   </Button>
                   
                   <p className="text-center text-sm text-muted-foreground mt-4">
