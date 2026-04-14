@@ -155,7 +155,7 @@ export function ProductDetailsPage() {
                   <button
                     type="button"
                     onClick={() => setShowMore((prev) => !prev)}
-                    className="text-primary font-medium hover:underline"
+                    className="text-blue-500 font-medium hover:underline"
                   >
                     {showMore ? "Show less" : "Show more"}
                   </button>
