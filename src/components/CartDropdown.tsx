@@ -7,10 +7,22 @@ import { useCart } from "@/context/cart-context"
 export function CartDropdown() {
   const [isOpen, setIsOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
+  const [isCartAnimating, setIsCartAnimating] = useState(false)
   const { items, removeItem, totalItems, totalPrice, lastAddedToken } = useCart()
 
   useEffect(() => {
     setIsVisible(true)
+  }, [lastAddedToken])
+
+  useEffect(() => {
+    if (lastAddedToken === 0) return
+
+    setIsCartAnimating(true)
+    const timeoutId = window.setTimeout(() => {
+      setIsCartAnimating(false)
+    }, 450)
+
+    return () => window.clearTimeout(timeoutId)
   }, [lastAddedToken])
 
   if (!isVisible) {
@@ -42,7 +54,12 @@ export function CartDropdown() {
         >
           <ChevronRight className="h-4 w-4" />
         </button>
-        <Button onClick={() => setIsOpen((prev) => !prev)} className="relative">
+        <Button
+          onClick={() => setIsOpen((prev) => !prev)}
+          className={`relative transition-shadow duration-300 ${
+            isCartAnimating ? "cart-bump shadow-[0_0_0_4px_rgba(59,130,246,0.25)]" : ""
+          }`}
+        >
           <ShoppingCart className="h-4 w-4 mr-2" />
           Cart
           {totalItems > 0 && (
