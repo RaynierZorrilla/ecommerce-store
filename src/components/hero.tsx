@@ -12,7 +12,8 @@ export function Hero() {
         muted
         playsInline
       >
-        <source src="/video_full_hd.mp4" type="video/mp4" />
+        <source src="/mp4/responsive-car.mp4" type="video/mp4" media="(max-width: 768px)" />
+        <source src="/mp4/car-video.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-black/55" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/25 via-black/30 to-black/60" />
