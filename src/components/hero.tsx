@@ -4,15 +4,14 @@ import { Button } from "@/components/ui/button"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden bg-black">
       <video
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full md:w-full mx-auto object-contain md:object-cover"
         autoPlay
         loop
         muted
         playsInline
       >
-        <source src="/mp4/responsive-car.mp4" type="video/mp4" media="(max-width: 768px)" />
         <source src="/mp4/car-video.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-black/55" />
