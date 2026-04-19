@@ -37,10 +37,21 @@ export function Footer() {
   return (
     <footer className="relative border-t border-white/20 overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/car-car.jpg')" }}
+        className="absolute inset-0 bg-cover bg-right bg-no-repeat md:hidden"
+        style={{ backgroundImage: "url('/red-car.jpg')" }}
+        aria-hidden
       />
-      <div className="absolute inset-0 bg-black/80" />
+      <video
+        className="absolute inset-0 z-0 hidden h-full w-full object-cover md:block"
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden
+      >
+        <source src="/mp4/sr-car.mp4" type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-black/80" aria-hidden />
 
       <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
