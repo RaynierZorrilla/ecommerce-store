@@ -80,23 +80,25 @@ export function Footer() {
             </div>
           </div>
 
-          {footerLinks.map((section, index) => (
-            <div key={index} className="text-center md:text-left">
-              <h3 className="font-semibold text-white mb-4">{section.title}</h3>
-              <ul className="space-y-2.5">
-                {section.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <a
-                      href={link.href}
-                      className="text-white/80 hover:text-white transition-colors text-sm"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div className="col-span-full grid grid-cols-3 gap-x-3 gap-y-0 sm:gap-x-5 md:contents">
+            {footerLinks.map((section, index) => (
+              <div key={index} className="min-w-0 text-center md:text-left">
+                <h3 className="font-semibold text-white mb-3 text-sm sm:text-base md:mb-4">{section.title}</h3>
+                <ul className="space-y-2 sm:space-y-2.5">
+                  {section.links.map((link, linkIndex) => (
+                    <li key={linkIndex}>
+                      <a
+                        href={link.href}
+                        className="text-white/80 hover:text-white transition-colors text-xs leading-snug sm:text-sm"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
