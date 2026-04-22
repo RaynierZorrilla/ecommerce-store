@@ -87,15 +87,15 @@ export function ProductDetailsPage() {
 
           <div className="overflow-hidden rounded-[32px] border border-zinc-200 bg-white shadow-[0_20px_80px_rgba(0,0,0,0.06)]">
             <div className="grid items-stretch lg:grid-cols-2">
-              <div className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-zinc-100 via-white to-zinc-100 p-8 md:p-12">
+              <div className="relative flex min-h-[360px] items-center justify-center overflow-hidden bg-gradient-to-br from-zinc-100 via-white to-zinc-100 p-6 pt-24 sm:min-h-[420px] sm:p-8 sm:pt-8 md:p-12">
                 <div className="absolute h-72 w-72 rounded-full bg-red-500/10 blur-3xl" />
-                <div className="absolute left-6 top-6">
-                  <Badge className="rounded-full bg-zinc-950 px-4 py-1.5 text-white hover:bg-zinc-950">
+                <div className="absolute left-4 top-6 sm:left-6 sm:top-6">
+                  <Badge className="rounded-full bg-zinc-950 px-3 py-1 text-xs text-white hover:bg-zinc-950 sm:px-4 sm:py-1.5 sm:text-sm">
                     Best Seller
                   </Badge>
                 </div>
-                <div className="absolute right-6 top-6">
-                  <Badge className="rounded-full bg-red-600 px-4 py-1.5 text-white hover:bg-red-600">
+                <div className="absolute right-4 top-6 sm:right-6 sm:top-6">
+                  <Badge className="rounded-full bg-red-600 px-3 py-1 text-xs text-white hover:bg-red-600 sm:px-4 sm:py-1.5 sm:text-sm">
                     4 Cars per Kit
                   </Badge>
                 </div>
@@ -103,7 +103,7 @@ export function ProductDetailsPage() {
                 <motion.img
                   src="/small-kit.png"
                   alt="Small kit - 4 cars"
-                  className="relative w-full max-w-lg rounded-[28px] object-contain drop-shadow-[0_24px_40px_rgba(0,0,0,0.14)]"
+                  className="relative w-full max-w-[350px] rounded-[28px] object-contain drop-shadow-[0_24px_40px_rgba(0,0,0,0.14)] sm:max-w-md md:max-w-lg"
                   initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.45 }}

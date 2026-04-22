@@ -69,7 +69,7 @@ export function Product() {
                   <motion.img
                     src="/small-kit.png"
                     alt="Newer Lights Restoration Kit"
-                    className="mx-auto h-[260px] w-[260px] rounded-3xl object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.18)] transition-transform duration-300 hover:scale-[1.03] sm:h-[320px] sm:w-[320px] md:h-[380px] md:w-[380px]"
+                    className="mx-auto h-[350px] w-[350px] rounded-3xl object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.18)] transition-transform duration-300 hover:scale-[1.03] sm:h-[320px] sm:w-[320px] md:h-[380px] md:w-[380px]"
                     whileHover={{ y: -4 }}
                     transition={{ duration: 0.25 }}
                   />
