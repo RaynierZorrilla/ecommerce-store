@@ -1,52 +1,118 @@
-import { Zap, Shield, Droplets, Sun } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import {
+  Zap,
+  ShieldCheck,
+  Sparkles,
+  Eye,
+} from "lucide-react"
+
+import { motion } from "framer-motion"
 
 const features = [
   {
     icon: Zap,
-    title: "Quick Application",
-    description: "Apply in just 5 minutes with our easy-to-use formula. No special tools required.",
+    title: "Restore in Minutes",
+    description:
+      "Get dramatically clearer headlights with a fast and simple application process.",
   },
   {
-    icon: Shield,
+    icon: ShieldCheck,
     title: "Long-Lasting Protection",
-    description: "Our UV-resistant coating protects your headlights for years, not months.",
+    description:
+      "UV-resistant protection helps prevent future yellowing and oxidation.",
   },
   {
-    icon: Droplets,
-    title: "Professional Formula",
-    description: "The same formula trusted by luxury dealerships worldwide since 2009.",
+    icon: Sparkles,
+    title: "Make Your Car Look Newer",
+    description:
+      "Instantly improve the appearance of your vehicle with a cleaner finish.",
   },
   {
-    icon: Sun,
-    title: "Crystal Clear Results",
-    description: "Remove yellowing, oxidation, and haziness for dramatically improved visibility.",
+    icon: Eye,
+    title: "Better Night Visibility",
+    description:
+      "Cleaner headlights help improve clarity and confidence while driving at night.",
   },
 ]
 
 export function Features() {
   return (
-    <section id="features" className="py-20 bg-secondary/30">
+    <section
+      id="features"
+      className="relative overflow-hidden py-24"
+    >
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-zinc-50 to-white" />
+
+      <div className="absolute left-1/2 top-10 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-red-500/10 blur-3xl" />
+
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Why Choose Newer Lights?</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Our professional-grade restoration kit delivers dealership-quality results at a fraction of the cost.
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <div className="mb-4 inline-flex items-center rounded-full border border-red-200 bg-red-50 px-4 py-1.5 text-sm font-medium text-red-600">
+            Trusted restoration solution
+          </div>
+
+          <h2 className="text-4xl font-extrabold tracking-tight text-zinc-900 md:text-5xl">
+            Why Drivers Choose Newer Lights
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-zinc-600">
+            Restore faded headlights with a professional-grade solution designed
+            to improve clarity, appearance, and long-term protection.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {features.map((feature, index) => (
-            <Card key={index} className="bg-card border-border hover:border-primary/50 transition-colors">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-primary" />
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+              }}
+              viewport={{ once: true }}
+              className="group relative overflow-hidden rounded-3xl border border-zinc-200 bg-white p-7 shadow-[0_10px_40px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-2 hover:border-red-200 hover:shadow-[0_20px_60px_rgba(255,0,0,0.08)]"
+            >
+              <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-red-500/5 blur-3xl transition-all duration-300 group-hover:bg-red-500/10" />
+
+              <div className="relative">
+                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-red-50 text-red-600">
+                  <feature.icon className="h-7 w-7" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground text-sm">{feature.description}</p>
-              </CardContent>
-            </Card>
+
+                <h3 className="text-xl font-bold text-zinc-900">
+                  {feature.title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-7 text-zinc-600">
+                  {feature.description}
+                </p>
+              </div>
+            </motion.div>
           ))}
+        </div>
+
+        <div className="mt-16 grid gap-50 rounded-[32px] border border-zinc-200 bg-white p-8 shadow-[0_10px_40px_rgba(0,0,0,0.05)] md:grid-cols-3">
+          <div className="text-center">
+            <h3 className="text-4xl font-black text-zinc-900">5 min</h3>
+            <p className="mt-2 text-sm text-zinc-600">
+              Fast application process
+            </p>
+          </div>
+
+          <div className="text-center">
+            <h3 className="text-4xl font-black text-zinc-900">2009</h3>
+            <p className="mt-2 text-sm text-zinc-600">
+              Trusted restoration formula
+            </p>
+          </div>
+
+          <div className="text-center">
+            <h3 className="text-4xl font-black text-zinc-900">UV Shield</h3>
+            <p className="mt-2 text-sm text-zinc-600">
+              Long-lasting protection layer
+            </p>
+          </div>
         </div>
       </div>
     </section>

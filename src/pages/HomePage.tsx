@@ -1,4 +1,5 @@
 import { About } from "@/components/about"
+import { BeforeAfterCarousel } from "@/components/before-after-carousel"
 import BrandCarousel from "@/components/BrandCarousel"
 import { Features } from "@/components/features"
 import { Footer } from "@/components/footer"
@@ -15,6 +16,7 @@ export function HomePage() {
       <BrandCarousel />
       <Features />
       <Product />
+      <BeforeAfterCarousel />
       <Testimonials />
       <About />
       <Footer />

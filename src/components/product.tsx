@@ -1,85 +1,173 @@
 import { Link } from "react-router-dom"
-import { Check, Star, ShoppingCart } from "lucide-react"
+import {
+  Check,
+  Star,
+  ShoppingCart,
+  ShieldCheck,
+  Truck,
+  BadgeDollarSign,
+} from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { motion } from "framer-motion"
 
 const features = [
   "Professional-grade restoration formula",
   "UV protective coating included",
   "Works on all headlight types",
-  "Complete application kit",
+  "Complete application kit included",
   "Easy 5-minute application",
   "Lasts up to 3 years",
 ]
 
 export function Product() {
   return (
-    <section id="product" className="py-20">
+    <section
+      id="product"
+      className="relative overflow-hidden bg-gradient-to-b from-white via-zinc-50 to-white py-24"
+    >
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute left-1/3 top-20 h-64 w-64 rounded-full bg-red-500/10 blur-3xl" />
+        <div className="absolute bottom-10 right-10 h-56 w-56 rounded-full bg-orange-400/10 blur-3xl" />
+      </div>
+
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Best-Selling Kit</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Everything you need to restore your headlights to like-new condition.
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <div className="mb-4 inline-flex items-center rounded-full border border-red-200 bg-red-50 px-4 py-1.5 text-sm font-medium text-red-600">
+            Best-selling restoration kit
+          </div>
+
+          <h2 className="text-4xl font-extrabold tracking-tight text-zinc-900 md:text-5xl">
+            Our Best-Selling Kit
+          </h2>
+
+          <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-zinc-600">
+            Everything you need to restore faded headlights and give your car a
+            cleaner, sharper, more professional look.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <Card className="bg-card border-border overflow-hidden">
-            <CardContent className="p-0">
-              <div className="grid md:grid-cols-2">
-                <div className="relative bg-secondary/50 p-8 flex items-center justify-center min-h-[300px]">
-                  <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">Most Popular</Badge>
-                  <Link to="/product-details">
-                    <img
-                      src="/small-kit.png"
-                      alt="Newer Lights Restoration Kit"
-                      className="mx-auto rounded-2xl object-contain w-80 h-80"
-                    />
-                  </Link>
+        <div className="mx-auto max-w-6xl">
+          <div className="overflow-hidden rounded-[32px] border border-zinc-200 bg-white shadow-[0_20px_80px_rgba(0,0,0,0.08)]">
+            <div className="grid items-stretch lg:grid-cols-2">
+              <div className="relative flex min-h-[420px] items-center justify-center overflow-hidden bg-gradient-to-br from-zinc-100 via-white to-zinc-100 p-8 lg:p-10">
+                <div className="absolute left-8 top-8">
+                  <Badge className="rounded-full bg-zinc-950 px-4 py-1.5 text-white hover:bg-zinc-950">
+                    Most Popular
+                  </Badge>
                 </div>
 
-                <div className="p-8">
-                  <div className="flex items-center gap-2 mb-4">
+                <div className="absolute right-8 top-8">
+                  <Badge className="rounded-full bg-red-600 px-4 py-1.5 text-white hover:bg-red-600">
+                    Limited-Time Offer
+                  </Badge>
+                </div>
+
+                <div className="absolute h-64 w-64 rounded-full bg-red-500/10 blur-3xl" />
+
+                <Link to="/product-details" className="relative">
+                  <motion.img
+                    src="/small-kit.png"
+                    alt="Newer Lights Restoration Kit"
+                    className="mx-auto h-[320px] w-[320px] rounded-3xl object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.18)] transition-transform duration-300 hover:scale-[1.03] md:h-[380px] md:w-[380px]"
+                    whileHover={{ y: -4 }}
+                    transition={{ duration: 0.25 }}
+                  />
+                </Link>
+              </div>
+
+              <div className="p-8 lg:p-10">
+                <div className="mb-4 flex flex-wrap items-center gap-2">
+                  <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-500 text-yellow-500" />
+                      <Star
+                        key={i}
+                        className="h-5 w-5 fill-yellow-500 text-yellow-500"
+                      />
                     ))}
-                    <span className="text-sm text-muted-foreground ml-2">(2,847 reviews)</span>
                   </div>
+                  <span className="text-sm font-medium text-zinc-700">
+                    4.9/5 rating
+                  </span>
+                  <span className="text-sm text-zinc-500">(2,847 reviews)</span>
+                </div>
 
-                  <Link to="/product-details">
-                    <h3 className="text-2xl font-bold text-foreground mb-2">Newer Lights Restoration Kit</h3>
-                  </Link>
+                <Link to="/product-details">
+                  <h3 className="text-3xl font-extrabold leading-tight text-zinc-900">
+                    Newer Lights Restoration Kit
+                  </h3>
+                </Link>
 
-                  <div className="flex items-baseline gap-2 mb-6">
-                    <span className="text-4xl font-bold text-primary">$42.99</span>
-                    <span className="text-lg text-muted-foreground line-through">$79.99</span>
-                    <Badge variant="secondary" className="ml-2">
+                <p className="mt-4 text-base leading-7 text-zinc-600">
+                  Restore cloudy, yellowed headlights with a professional-grade
+                  kit designed to improve clarity, enhance appearance, and help
+                  protect against future oxidation.
+                </p>
+
+                <div className="mt-6 rounded-2xl border border-red-100 bg-red-50/60 p-5">
+                  <div className="flex flex-wrap items-end gap-3">
+                    <span className="text-5xl font-black tracking-tight text-zinc-950">
+                      $42.99
+                    </span>
+                    <span className="pb-1 text-xl text-zinc-400 line-through">
+                      $79.99
+                    </span>
+                    <Badge className="rounded-full bg-red-600 px-3 py-1 text-white hover:bg-red-600">
                       46% OFF
                     </Badge>
                   </div>
 
-                  <ul className="space-y-3 mb-8">
-                    {features.map((feature, index) => (
-                      <li key={index} className="flex items-center gap-3 text-sm text-foreground">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Button asChild size="lg" className="w-full text-lg py-6">
-                    <Link to="/product-details">
-                      <ShoppingCart className="w-5 h-5 mr-2" />
-                      View Product Details
-                    </Link>
-                  </Button>
-
-                  <p className="text-center text-sm text-muted-foreground mt-4">Free shipping on orders over $50</p>
+                  <p className="mt-2 text-sm font-medium text-red-600">
+                    Save $37 today
+                  </p>
                 </div>
+
+                <ul className="mt-8 space-y-4">
+                  {features.map((feature, index) => (
+                    <li
+                      key={index}
+                      className="flex items-start gap-3 text-sm leading-6 text-zinc-700"
+                    >
+                      <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-red-50 text-red-600">
+                        <Check className="h-4 w-4" />
+                      </span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Button
+                  asChild
+                  size="lg"
+                  className="mt-8 h-14 w-full rounded-full bg-red-600 text-base font-semibold text-white shadow-lg shadow-red-600/20 transition hover:bg-red-700"
+                >
+                  <Link to="/product-details">
+                    <ShoppingCart className="mr-2 h-5 w-5" />
+                    View Product Details
+                  </Link>
+                </Button>
+
+                <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                  <div className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-3 text-sm text-zinc-700">
+                    <Truck className="h-4 w-4 text-red-600" />
+                    Fast shipping
+                  </div>
+                  <div className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-3 text-sm text-zinc-700">
+                    <ShieldCheck className="h-4 w-4 text-red-600" />
+                    Secure checkout
+                  </div>
+                  <div className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-3 text-sm text-zinc-700">
+                    <BadgeDollarSign className="h-4 w-4 text-red-600" />
+                    Great value
+                  </div>
+                </div>
+
+                <p className="mt-5 text-center text-sm text-zinc-500">
+                  Free shipping on orders over $50
+                </p>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
     </section>

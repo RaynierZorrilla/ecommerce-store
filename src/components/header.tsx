@@ -1,74 +1,112 @@
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
+import { useEffect, useState } from "react"
+import { Menu, X, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 12)
+    }
+
+    handleScroll()
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const navLinks = [
-    { href: "#features", label: "Features" },
+    { href: "#features", label: "Benefits" },
     { href: "#product", label: "Product" },
     { href: "#testimonials", label: "Reviews" },
     { href: "#about", label: "About" },
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <a href="#" className="flex items-center gap-2">
-            <img src="/newerlights-icon.png" alt="Newer Lights" className="w-24 h-24 object-contain" />
-          </a>
+    <>
 
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
+      <header
+        className={cn(
+          "fixed left-0 right-0 z-50 transition-all duration-300",
+          isScrolled
+            ? "top-8 border-b border-black/5 bg-white/88 shadow-[0_10px_30px_rgba(0,0,0,0.06)] backdrop-blur-xl"
+            : "top-8 bg-white/75 backdrop-blur-md"
+        )}
+      >
+        <div className="container mx-auto px-4">
+          <div className="flex h-18 items-center justify-between">
+            <a href="#" className="flex items-center gap-3">
+              <img
+                src="/newerlights-icon.png"
+                alt="Newer Lights"
+                className="h-10 w-auto object-contain md:h-11"
+              />
+            </a>
 
-          <div className="hidden md:flex items-center gap-4">
-            <Button asChild>
-              <a href="#product">Shop Now</a>
-            </Button>
-          </div>
-
-          <button
-            className="md:hidden p-2 text-foreground"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <nav className="flex flex-col gap-4">
+            <nav className="hidden items-center gap-8 md:flex">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium py-2"
-                  onClick={() => setIsMenuOpen(false)}
+                  className="relative text-sm font-medium text-zinc-600 transition-colors duration-200 hover:text-zinc-950"
                 >
                   {link.label}
                 </a>
               ))}
-              <Button asChild className="mt-2">
-                <a href="#product" onClick={() => setIsMenuOpen(false)}>
-                  Shop Now
+            </nav>
+
+            <div className="hidden items-center gap-3 md:flex">
+              <Button
+                asChild
+                className="rounded-full bg-red-600 px-5 text-white shadow-lg shadow-red-600/20 transition hover:bg-red-700"
+              >
+                <a href="#product" className="inline-flex items-center gap-2">
+                  Get My Kit
+                  <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
-            </nav>
+            </div>
+
+            <button
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-900 transition hover:bg-zinc-50 md:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
           </div>
-        )}
-      </div>
-    </header>
+
+          {isMenuOpen && (
+            <div className="pb-4 md:hidden">
+              <div className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-[0_20px_40px_rgba(0,0,0,0.08)]">
+                <nav className="flex flex-col gap-2">
+                  {navLinks.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      className="rounded-xl px-3 py-3 text-sm font-medium text-zinc-700 transition hover:bg-zinc-50 hover:text-zinc-950"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+
+                  <Button
+                    asChild
+                    className="mt-3 rounded-full bg-red-600 text-white hover:bg-red-700"
+                  >
+                    <a href="#product" onClick={() => setIsMenuOpen(false)}>
+                      Get My Kit
+                    </a>
+                  </Button>
+                </nav>
+              </div>
+            </div>
+          )}
+        </div>
+      </header>
+    </>
   )
 }

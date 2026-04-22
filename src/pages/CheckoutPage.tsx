@@ -1,12 +1,22 @@
 import { Link } from "react-router-dom"
 import { useMemo, useState } from "react"
-import { ArrowLeft, CreditCard, ShieldCheck, ShoppingCart } from "lucide-react"
+import {
+  ArrowLeft,
+  CreditCard,
+  ShieldCheck,
+  ShoppingCart,
+  Lock,
+  Truck,
+  BadgeDollarSign,
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useCart } from "@/context/cart-context"
 import { Footer } from "@/components/footer"
+import { motion } from "framer-motion"
 
 export function CheckoutPage() {
   const { items, totalItems, totalPrice } = useCart()
+
   const [shippingType, setShippingType] = useState<"standard" | "express">("standard")
   const [paymentMethod, setPaymentMethod] = useState<
     "card" | "googlepay" | "cashapp" | "amazonpay" | "paypal"
@@ -18,304 +28,346 @@ export function CheckoutPage() {
 
   return (
     <>
-      <main className="min-h-screen bg-background py-12">
-        <div className="container mx-auto px-4 max-w-6xl">
-        <Link
-          to="/cart"
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Back to cart
-        </Link>
+      <main className="min-h-screen bg-gradient-to-b from-white via-zinc-50 to-white py-12">
+        <div className="container mx-auto max-w-7xl px-4">
+          <Link
+            to="/cart"
+            className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-zinc-500 transition hover:text-zinc-900"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to cart
+          </Link>
 
-        <h1 className="text-3xl font-bold text-foreground mb-8">Checkout</h1>
-
-        <section className="grid lg:grid-cols-3 gap-6 mb-12">
-          <div className="lg:col-span-2 rounded-xl border border-border p-6 space-y-6">
-            <div>
-              <h2 className="text-xl font-semibold mb-3">Customer information</h2>
-              <div className="grid sm:grid-cols-2 gap-3 text-sm">
-                <input
-                  type="text"
-                  placeholder="Nombre"
-                  className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
-                />
-                <input
-                  type="text"
-                  placeholder="Apellido"
-                  className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
-                />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="sm:col-span-2 w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
-                />
-                <input
-                  type="text"
-                  placeholder="Address"
-                  className="sm:col-span-2 w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
-                />
-                <input
-                  type="text"
-                  placeholder="Ciudad / Pais"
-                  className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
-                />
-                <input
-                  type="text"
-                  placeholder="Postal code"
-                  className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
-                />
-              </div>
-            </div>
-
-
-            <div className="border-t border-border pt-6 space-y-4">
-              <h2 className="text-xl font-semibold">Payment method</h2>
-
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 text-sm">
-                <button
-                  type="button"
-                  onClick={() => setPaymentMethod("card")}
-                  className={`rounded-lg border px-3 py-3 text-left transition-colors ${
-                    paymentMethod === "card"
-                      ? "border-blue-500 bg-blue-50 text-blue-700"
-                      : "border-border hover:bg-secondary/30"
-                  }`}
-                >
-                  <span className="flex flex-col items-start gap-2 font-semibold">
-                    <CreditCard className="h-7 w-7 shrink-0" aria-hidden />
-                    <span className="text-sm">Tarjeta</span>
-                  </span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setPaymentMethod("googlepay")}
-                  className={`rounded-lg border px-3 py-3 text-left transition-colors ${
-                    paymentMethod === "googlepay"
-                      ? "border-blue-500 bg-blue-50 text-blue-700"
-                      : "border-border hover:bg-secondary/30"
-                  }`}
-                >
-                  <span className="flex flex-col items-start gap-2 font-semibold">
-                    <img
-                      src="/google-pay.png"
-                      alt=""
-                      className="h-7 w-auto max-w-[92px] object-contain object-left"
-                    />
-                    <span className="text-sm">Google Pay</span>
-                  </span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setPaymentMethod("cashapp")}
-                  className={`rounded-lg border px-3 py-3 text-left transition-colors ${
-                    paymentMethod === "cashapp"
-                      ? "border-blue-500 bg-blue-50 text-blue-700"
-                      : "border-border hover:bg-secondary/30"
-                  }`}
-                >
-                  <span className="flex flex-col items-start gap-2 font-semibold">
-                    <img
-                      src="/cash-pay.png"
-                      alt=""
-                      className="h-8 w-auto max-w-[40px] object-contain object-left"
-                    />
-                    <span className="text-sm">Cash App Pay</span>
-                  </span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setPaymentMethod("amazonpay")}
-                  className={`rounded-lg border px-3 py-3 text-left transition-colors ${
-                    paymentMethod === "amazonpay"
-                      ? "border-blue-500 bg-blue-50 text-blue-700"
-                      : "border-border hover:bg-secondary/30"
-                  }`}
-                >
-                  <span className="flex flex-col items-start gap-2 font-semibold">
-                    <img
-                      src="/amazon-pay.jpg"
-                      alt=""
-                      className="h-7 w-auto max-w-[100px] object-contain object-left"
-                    />
-                    <span className="text-sm">Amazon Pay</span>
-                  </span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setPaymentMethod("paypal")}
-                  className={`rounded-lg border px-3 py-3 text-left transition-colors ${
-                    paymentMethod === "paypal"
-                      ? "border-blue-500 bg-blue-50 text-blue-700"
-                      : "border-border hover:bg-secondary/30"
-                  }`}
-                >
-                  <span className="flex flex-col items-start gap-2 font-semibold">
-                    <img
-                      src="/paypal.svg"
-                      alt=""
-                      className="h-6 w-auto max-w-[88px] object-contain object-left"
-                    />
-                    <span className="text-sm">PayPal</span>
-                  </span>
-                </button>
-              </div>
-
-              {paymentMethod === "card" && (
-                <div className="space-y-3 rounded-lg border border-border p-4">
-                  <label className="text-sm font-medium">Numero de tarjeta</label>
-                  <input
-                    type="text"
-                    placeholder="1234 1234 1234 1234"
-                    className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
-                  />
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    <div className="space-y-1">
-                      <label className="text-sm font-medium">Fecha de caducidad</label>
-                      <input
-                        type="text"
-                        placeholder="MM / AA"
-                        className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <label className="text-sm font-medium">Codigo de seguridad</label>
-                      <input
-                        type="text"
-                        placeholder="CVC"
-                        className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-sm font-medium">Pais</label>
-                    <select className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm">
-                      <option>Republica Dominicana</option>
-                    </select>
-                  </div>
-                </div>
-              )}
-
-              {paymentMethod === "googlepay" && (
-                <div className="space-y-3 rounded-lg border border-border p-4">
-                  <div className="flex items-center gap-3">
-                    <img src="/google-pay.jpg" alt="" className="h-8 w-auto max-w-[100px] object-contain" />
-                    <p className="font-medium text-foreground">Google Pay</p>
-                  </div>
-                  <p className="text-muted-foreground text-sm">
-                    Aparecera otro paso para enviar tus datos de pago de forma segura.
-                  </p>
-                </div>
-              )}
-
-              {paymentMethod === "cashapp" && (
-                <div className="space-y-3 rounded-lg border border-border p-4">
-                  <div className="flex items-center gap-3">
-                    <img src="/cash-pay.png" alt="" className="h-10 w-auto max-w-[44px] object-contain" />
-                    <p className="font-medium">Se ha seleccionado Cash App Pay.</p>
-                  </div>
-                  <p className="text-muted-foreground text-sm">
-                    Te aparecera un codigo QR para que lo escanees con Cash App.
-                  </p>
-                </div>
-              )}
-
-              {paymentMethod === "amazonpay" && (
-                <div className="space-y-3 rounded-lg border border-border p-4">
-                  <div className="flex items-center gap-3">
-                    <img src="/amazon-pay.jpg" alt="" className="h-8 w-auto max-w-[110px] object-contain" />
-                    <p className="font-medium">Se ha seleccionado Amazon Pay.</p>
-                  </div>
-                  <p className="text-muted-foreground text-sm">
-                    Despues del envio, se te redirigira para completar los siguientes pasos de forma segura.
-                  </p>
-                </div>
-              )}
-
-              {paymentMethod === "paypal" && (
-                <div className="space-y-3 rounded-lg border border-border p-4">
-                  <div className="flex items-center gap-3">
-                    <img src="/paypal.svg" alt="" className="h-6 w-auto max-w-[100px] object-contain" />
-                    <p className="font-medium">Se ha seleccionado PayPal.</p>
-                  </div>
-                  <p className="text-muted-foreground text-sm">
-                    Al continuar, se abrira PayPal para que completes el pago de forma segura.
-                  </p>
-                </div>
-              )}
-            </div>
-
-            <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white" disabled={items.length === 0}>
-              <ShoppingCart className="h-4 w-4 mr-2" />
-              Make Payment
-            </Button>
-            <p className="text-center text-sm text-muted-foreground inline-flex w-full justify-center items-center gap-2">
-              <ShieldCheck className="h-4 w-4" />
-              100% Secure & Safe Payments
+          <div className="mb-8">
+            <h1 className="text-4xl font-extrabold tracking-tight text-zinc-900 md:text-5xl">
+              Checkout
+            </h1>
+            <p className="mt-3 text-base text-zinc-600 md:text-lg">
+              Complete your order securely and get your restoration kit delivered fast.
             </p>
           </div>
 
-          <aside className="rounded-xl border border-border p-6 h-fit">
-            <div className="flex items-center justify-between gap-3 mb-4">
-              <h3 className="text-lg font-semibold">Order summary</h3>
-              <Link
-                to="/cart"
-                className="text-sm font-medium text-primary hover:underline shrink-0"
-              >
-                Editar
-              </Link>
-            </div>
+          <section className="grid gap-6 lg:grid-cols-[1.65fr_0.9fr]">
+            <div className="rounded-[32px] border border-zinc-200 bg-white p-6 shadow-[0_16px_50px_rgba(0,0,0,0.05)] md:p-8">
+              <div>
+                <h2 className="text-2xl font-bold text-zinc-900">Customer information</h2>
 
-            {items.length > 0 ? (
-              <ul className="space-y-3 text-sm mb-4">
-                {items.map((item) => (
-                  <li key={item.id} className="flex items-center gap-3">
-                    <img
-                      src={item.image}
-                      alt=""
-                      className="h-14 w-14 rounded-md object-contain bg-secondary/30 p-1 shrink-0 border border-border"
-                    />
-                    <div className="flex min-w-0 flex-1 items-start justify-between gap-2">
-                      <div className="min-w-0">
-                        <p className="font-medium text-foreground truncate">{item.name}</p>
-                        <p className="text-xs text-muted-foreground">Cantidad: {item.quantity}</p>
+                <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                  <input
+                    type="text"
+                    placeholder="First name"
+                    className="h-12 rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-red-500"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Last name"
+                    className="h-12 rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-red-500"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    className="h-12 rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-red-500 sm:col-span-2"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Address"
+                    className="h-12 rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-red-500 sm:col-span-2"
+                  />
+                  <input
+                    type="text"
+                    placeholder="City / Country"
+                    className="h-12 rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-red-500"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Postal code"
+                    className="h-12 rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-red-500"
+                  />
+                </div>
+              </div>
+
+              <div className="mt-8 border-t border-zinc-200 pt-8">
+                <div className="flex items-center justify-between gap-3">
+                  <h2 className="text-2xl font-bold text-zinc-900">Shipping</h2>
+                </div>
+
+                <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                  <button
+                    type="button"
+                    onClick={() => setShippingType("standard")}
+                    className={`rounded-2xl border p-4 text-left transition ${
+                      shippingType === "standard"
+                        ? "border-red-500 bg-red-50"
+                        : "border-zinc-200 bg-white hover:bg-zinc-50"
+                    }`}
+                  >
+                    <p className="font-semibold text-zinc-900">Standard shipping</p>
+                    <p className="mt-1 text-sm text-zinc-500">$4.99</p>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setShippingType("express")}
+                    className={`rounded-2xl border p-4 text-left transition ${
+                      shippingType === "express"
+                        ? "border-red-500 bg-red-50"
+                        : "border-zinc-200 bg-white hover:bg-zinc-50"
+                    }`}
+                  >
+                    <p className="font-semibold text-zinc-900">Express shipping</p>
+                    <p className="mt-1 text-sm text-zinc-500">$9.99</p>
+                  </button>
+                </div>
+              </div>
+
+              <div className="mt-8 border-t border-zinc-200 pt-8">
+                <h2 className="text-2xl font-bold text-zinc-900">Payment method</h2>
+
+                <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-5">
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod("card")}
+                    className={`rounded-2xl border p-4 text-left transition ${
+                      paymentMethod === "card"
+                        ? "border-red-500 bg-red-50 text-red-700"
+                        : "border-zinc-200 bg-white hover:bg-zinc-50"
+                    }`}
+                  >
+                    <span className="flex flex-col items-start gap-3 font-semibold">
+                      <CreditCard className="h-7 w-7 shrink-0" />
+                      <span className="text-sm">Card</span>
+                    </span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod("googlepay")}
+                    className={`rounded-2xl border p-4 text-left transition ${
+                      paymentMethod === "googlepay"
+                        ? "border-red-500 bg-red-50"
+                        : "border-zinc-200 bg-white hover:bg-zinc-50"
+                    }`}
+                  >
+                    <span className="flex flex-col items-start gap-3 font-semibold">
+                      <img src="/google-pay.png" alt="" className="h-7 w-auto max-w-[92px] object-contain object-left" />
+                      <span className="text-sm text-zinc-900">Google Pay</span>
+                    </span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod("cashapp")}
+                    className={`rounded-2xl border p-4 text-left transition ${
+                      paymentMethod === "cashapp"
+                        ? "border-red-500 bg-red-50"
+                        : "border-zinc-200 bg-white hover:bg-zinc-50"
+                    }`}
+                  >
+                    <span className="flex flex-col items-start gap-3 font-semibold">
+                      <img src="/cash-pay.png" alt="" className="h-8 w-auto max-w-[40px] object-contain object-left" />
+                      <span className="text-sm text-zinc-900">Cash App Pay</span>
+                    </span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod("amazonpay")}
+                    className={`rounded-2xl border p-4 text-left transition ${
+                      paymentMethod === "amazonpay"
+                        ? "border-red-500 bg-red-50"
+                        : "border-zinc-200 bg-white hover:bg-zinc-50"
+                    }`}
+                  >
+                    <span className="flex flex-col items-start gap-3 font-semibold">
+                      <img src="/amazon-pay.jpg" alt="" className="h-7 w-auto max-w-[100px] object-contain object-left" />
+                      <span className="text-sm text-zinc-900">Amazon Pay</span>
+                    </span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod("paypal")}
+                    className={`rounded-2xl border p-4 text-left transition ${
+                      paymentMethod === "paypal"
+                        ? "border-red-500 bg-red-50"
+                        : "border-zinc-200 bg-white hover:bg-zinc-50"
+                    }`}
+                  >
+                    <span className="flex flex-col items-start gap-3 font-semibold">
+                      <img src="/paypal.svg" alt="" className="h-6 w-auto max-w-[88px] object-contain object-left" />
+                      <span className="text-sm text-zinc-900">PayPal</span>
+                    </span>
+                  </button>
+                </div>
+
+                {paymentMethod === "card" && (
+                  <div className="mt-5 rounded-[28px] border border-zinc-200 bg-zinc-50/70 p-5">
+                    <div className="space-y-4">
+                      <div>
+                        <label className="mb-2 block text-sm font-medium text-zinc-900">
+                          Card number
+                        </label>
+                        <input
+                          type="text"
+                          placeholder="1234 1234 1234 1234"
+                          className="h-12 w-full rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-red-500"
+                        />
                       </div>
-                      <span className="shrink-0 font-medium tabular-nums">
-                        ${(item.price * item.quantity).toFixed(2)}
-                      </span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-sm text-muted-foreground mb-4">There are no products in your cart.</p>
-            )}
 
-            <div className="space-y-3 text-sm">
-              <p className="flex justify-between">
-                <span className="text-muted-foreground">Items</span>
-                <span>{totalItems}</span>
-              </p>
-              <p className="flex justify-between"><span className="text-muted-foreground">Subtotal</span><span>${totalPrice.toFixed(2)}</span></p>
-              <p className="flex justify-between">
-                <span className="text-muted-foreground">Discount</span>
-                <span>-${discount.toFixed(2)}</span>
-              </p>
-              <p className="flex justify-between">
-                <span className="text-muted-foreground">Shipping</span>
-                <span>${totalItems > 0 ? shippingCost.toFixed(2) : "0.00"}</span>
-              </p>
-              <div className="border-t border-border pt-3 mt-3">
-                <p className="flex justify-between text-base font-semibold">
-                  <span>Total</span>
-                  <span className="text-primary">${orderTotal.toFixed(2)}</span>
+                      <div className="grid gap-3 sm:grid-cols-2">
+                        <div>
+                          <label className="mb-2 block text-sm font-medium text-zinc-900">
+                            Expiration date
+                          </label>
+                          <input
+                            type="text"
+                            placeholder="MM / YY"
+                            className="h-12 w-full rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-red-500"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="mb-2 block text-sm font-medium text-zinc-900">
+                            Security code
+                          </label>
+                          <input
+                            type="text"
+                            placeholder="CVC"
+                            className="h-12 w-full rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-red-500"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="mb-2 block text-sm font-medium text-zinc-900">
+                          Country
+                        </label>
+                        <select className="h-12 w-full rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition focus:border-red-500">
+                          <option>Dominican Republic</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {paymentMethod !== "card" && (
+                  <div className="mt-5 rounded-[28px] border border-zinc-200 bg-zinc-50/70 p-5">
+                    <p className="text-sm leading-7 text-zinc-600">
+                      {paymentMethod === "googlepay" &&
+                        "A secure Google Pay step will appear after you continue."}
+                      {paymentMethod === "cashapp" &&
+                        "A Cash App QR code will appear so you can complete the payment securely."}
+                      {paymentMethod === "amazonpay" &&
+                        "You will be redirected to Amazon Pay to complete the next secure steps."}
+                      {paymentMethod === "paypal" &&
+                        "You will be redirected to PayPal to complete your payment securely."}
+                    </p>
+                  </div>
+                )}
+              </div>
+
+              <div className="mt-8">
+                <Button
+                  className="h-14 w-full rounded-full bg-red-600 text-base font-semibold text-white shadow-lg shadow-red-600/20 hover:bg-red-700"
+                  disabled={items.length === 0}
+                >
+                  <ShoppingCart className="mr-2 h-5 w-5" />
+                  Complete Payment
+                </Button>
+
+                <p className="mt-4 inline-flex w-full items-center justify-center gap-2 text-sm text-zinc-500">
+                  <ShieldCheck className="h-4 w-4" />
+                  100% Secure & Safe Payments
                 </p>
               </div>
             </div>
-          </aside>
-        </section>
+
+            <aside className="h-fit rounded-[32px] border border-zinc-200 bg-white p-6 shadow-[0_16px_50px_rgba(0,0,0,0.05)] md:p-7 lg:sticky lg:top-28">
+              <div className="mb-5 flex items-center justify-between gap-3">
+                <h3 className="text-2xl font-bold text-zinc-900">Order summary</h3>
+                <Link
+                  to="/cart"
+                  className="text-sm font-semibold text-red-600 transition hover:underline"
+                >
+                  Edit
+                </Link>
+              </div>
+
+              {items.length > 0 ? (
+                <ul className="mb-5 space-y-4">
+                  {items.map((item) => (
+                    <li key={item.id} className="flex items-center gap-3">
+                      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-zinc-200 bg-zinc-50 p-2">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="h-full w-full object-contain"
+                        />
+                      </div>
+
+                      <div className="flex min-w-0 flex-1 items-start justify-between gap-2">
+                        <div className="min-w-0">
+                          <p className="truncate font-semibold text-zinc-900">{item.name}</p>
+                          <p className="text-sm text-zinc-500">Qty: {item.quantity}</p>
+                        </div>
+                        <span className="shrink-0 font-semibold tabular-nums text-zinc-900">
+                          ${(item.price * item.quantity).toFixed(2)}
+                        </span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="mb-4 text-sm text-zinc-500">There are no products in your cart.</p>
+              )}
+
+              <div className="space-y-3 border-t border-zinc-200 pt-5 text-sm">
+                <p className="flex justify-between">
+                  <span className="text-zinc-500">Items</span>
+                  <span className="font-medium text-zinc-900">{totalItems}</span>
+                </p>
+                <p className="flex justify-between">
+                  <span className="text-zinc-500">Subtotal</span>
+                  <span className="font-medium text-zinc-900">${totalPrice.toFixed(2)}</span>
+                </p>
+                <p className="flex justify-between">
+                  <span className="text-zinc-500">Discount</span>
+                  <span className="font-medium text-zinc-900">-${discount.toFixed(2)}</span>
+                </p>
+                <p className="flex justify-between">
+                  <span className="text-zinc-500">Shipping</span>
+                  <span className="font-medium text-zinc-900">
+                    ${totalItems > 0 ? shippingCost.toFixed(2) : "0.00"}
+                  </span>
+                </p>
+
+                <div className="mt-4 border-t border-zinc-200 pt-4">
+                  <p className="flex justify-between text-lg font-bold">
+                    <span className="text-zinc-900">Total</span>
+                    <span className="text-zinc-950">${orderTotal.toFixed(2)}</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6 space-y-3">
+                <div className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-700">
+                  <Lock className="h-4 w-4 text-red-600" />
+                  Encrypted checkout
+                </div>
+                <div className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-700">
+                  <Truck className="h-4 w-4 text-red-600" />
+                  Fast shipping available
+                </div>
+                <div className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-700">
+                  <BadgeDollarSign className="h-4 w-4 text-red-600" />
+                  Professional-grade value
+                </div>
+              </div>
+            </aside>
+          </section>
         </div>
       </main>
+
       <Footer />
     </>
   )

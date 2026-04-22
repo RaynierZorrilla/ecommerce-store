@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Music2 } from "lucide-react"
+import { Instagram, Facebook, Music2, ArrowRight } from "lucide-react"
 
 const socialLinks = [
   { icon: Instagram, href: "https://www.instagram.com/newerlights/", label: "Instagram" },
@@ -34,15 +34,18 @@ const footerLinks = [
 ]
 
 export function Footer() {
+  const currentYear = new Date().getFullYear()
+
   return (
-    <footer className="relative border-t border-white/20 overflow-hidden">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-black text-white">
       <div
-        className="absolute inset-0 bg-cover bg-right bg-no-repeat md:hidden"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 md:hidden"
         style={{ backgroundImage: "url('/red-car.jpg')" }}
         aria-hidden
       />
+
       <video
-        className="absolute inset-0 z-0 hidden h-full w-full object-cover md:block"
+        className="absolute inset-0 hidden h-full w-full object-cover opacity-20 md:block"
         autoPlay
         muted
         loop
@@ -51,45 +54,79 @@ export function Footer() {
       >
         <source src="/mp4/sr-car.mp4" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-black/80" aria-hidden />
 
-      <div className="container mx-auto px-4 py-12 relative z-10">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
-          <div className="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <img src="/newerlights-icon.png" alt="Newer Lights" className="w-40 h-40 object-contain" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/85 to-black" aria-hidden />
+      <div
+        className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.06),transparent_45%)]"
+        aria-hidden
+      />
 
-            <p className="text-white/80 mb-6 max-w-md text-pretty">
-              At Newerlights Headlights Restoration, we are dedicated to enhancing your driving experience by ensuring
-              crystal-clear visibility on the road. With a passion for automotive safety and a commitment to
-              excellence, we&apos;ve established ourselves as a leading provider of headlight restoration services.
-            </p>
+      <div className="relative z-10">
+        <div className="container mx-auto px-4 pt-16">
+          <div className="mb-14 overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-8 backdrop-blur-sm md:p-10">
+            <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+              <div className="max-w-2xl">
+                <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-red-400">
+                  Ready to upgrade your headlights?
+                </p>
+                <h2 className="text-3xl font-extrabold tracking-tight text-white md:text-4xl">
+                  Give your car a cleaner, brighter, more premium look.
+                </h2>
+                <p className="mt-4 max-w-xl text-base leading-7 text-white/70">
+                  Shop the restoration kit trusted by professionals and drivers who want real results.
+                </p>
+              </div>
 
-            <div className="flex items-center justify-center lg:justify-start gap-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-colors"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
+              <a
+                href="#product"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-red-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-red-600/20 transition hover:bg-red-700"
+              >
+                Get My Kit
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           </div>
 
-          <div className="col-span-full grid grid-cols-3 gap-x-3 gap-y-0 sm:gap-x-5 md:contents">
-            {footerLinks.map((section, index) => (
-              <div key={index} className="min-w-0 text-center md:text-left">
-                <h3 className="font-semibold text-white mb-3 text-sm sm:text-base md:mb-4">{section.title}</h3>
-                <ul className="space-y-2 sm:space-y-2.5">
-                  {section.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
+          <div className="grid gap-12 pb-12 md:grid-cols-2 lg:grid-cols-5">
+            <div className="lg:col-span-2">
+              <img
+                src="/newerlights-icon.png"
+                alt="Newer Lights"
+                className="h-20 w-auto object-contain"
+              />
+
+              <p className="mt-5 max-w-md text-base leading-8 text-white/70">
+                Professional-grade headlight restoration trusted by drivers, detailers, and dealerships since 2009.
+              </p>
+
+              <div className="mt-6 flex items-center gap-3">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/75 transition hover:border-red-500/40 hover:bg-red-500/10 hover:text-white"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="h-5 w-5" />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {footerLinks.map((section) => (
+              <div key={section.title}>
+                <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-white">
+                  {section.title}
+                </h3>
+
+                <ul className="space-y-3">
+                  {section.links.map((link) => (
+                    <li key={link.label}>
                       <a
                         href={link.href}
-                        className="text-white/80 hover:text-white transition-colors text-xs leading-snug sm:text-sm"
+                        className="text-sm text-white/70 transition hover:text-white"
                       >
                         {link.label}
                       </a>
@@ -99,18 +136,20 @@ export function Footer() {
               </div>
             ))}
           </div>
-        </div>
 
-        <div className="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-          <p className="text-sm text-white/80">© 2023 Newerlights LLC All rights reserved.</p>
+          <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-center md:flex-row md:text-left">
+            <p className="text-sm text-white/55">
+              © {currentYear} Newerlights LLC. All rights reserved.
+            </p>
 
-          <div className="flex items-center gap-6 text-sm text-white/80">
-            <a href="#" className="hover:text-white transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Terms of Service
-            </a>
+            <div className="flex items-center gap-6 text-sm text-white/55">
+              <a href="#" className="transition hover:text-white">
+                Privacy Policy
+              </a>
+              <a href="#" className="transition hover:text-white">
+                Terms of Service
+              </a>
+            </div>
           </div>
         </div>
       </div>
