@@ -29,7 +29,7 @@ export function CartDropdown() {
 
   if (!isVisible) {
     return (
-      <div className="fixed right-5 top-24 z-[60]">
+      <div className="fixed right-5 top-28 z-[60] md:top-32">
         <button
           type="button"
           onClick={() => setIsVisible(true)}
@@ -43,7 +43,7 @@ export function CartDropdown() {
   }
 
   return (
-    <div className="fixed right-5 top-24 z-[60]">
+    <div className="fixed right-5 top-28 z-[60] md:top-32">
       <div className="flex items-center justify-end gap-3">
         <button
           type="button"
