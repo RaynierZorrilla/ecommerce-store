@@ -39,13 +39,13 @@ export function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-black text-white">
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 md:hidden"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 md:hidden"
         style={{ backgroundImage: "url('/red-car.jpg')" }}
         aria-hidden
       />
 
       <video
-        className="absolute inset-0 hidden h-full w-full object-cover opacity-20 md:block"
+        className="absolute inset-0 hidden h-full w-full object-cover opacity-40 md:block"
         autoPlay
         muted
         loop
@@ -55,7 +55,7 @@ export function Footer() {
         <source src="/mp4/sr-car.mp4" type="video/mp4" />
       </video>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/85 to-black" aria-hidden />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/65 to-black/80" aria-hidden />
       <div
         className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.06),transparent_45%)]"
         aria-hidden
@@ -87,8 +87,8 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="grid gap-12 pb-12 md:grid-cols-2 lg:grid-cols-5">
-            <div className="lg:col-span-2">
+          <div className="grid gap-10 pb-12 md:grid-cols-2 lg:grid-cols-5">
+            <div className="flex flex-col items-center text-center lg:col-span-2 lg:items-start lg:text-left">
               <img
                 src="/newerlights-icon.png"
                 alt="Newer Lights"
@@ -99,7 +99,7 @@ export function Footer() {
                 Professional-grade headlight restoration trusted by drivers, detailers, and dealerships since 2009.
               </p>
 
-              <div className="mt-6 flex items-center gap-3">
+              <div className="mt-6 flex items-center justify-center gap-3 lg:justify-start">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
@@ -115,26 +115,28 @@ export function Footer() {
               </div>
             </div>
 
-            {footerLinks.map((section) => (
-              <div key={section.title}>
-                <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-white">
-                  {section.title}
-                </h3>
+            <div className="col-span-full grid grid-cols-3 gap-x-3 gap-y-0 sm:gap-x-5 md:contents">
+              {footerLinks.map((section) => (
+                <div key={section.title} className="min-w-0 text-center md:text-left">
+                  <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-white sm:mb-4">
+                    {section.title}
+                  </h3>
 
-                <ul className="space-y-3">
-                  {section.links.map((link) => (
-                    <li key={link.label}>
-                      <a
-                        href={link.href}
-                        className="text-sm text-white/70 transition hover:text-white"
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+                  <ul className="space-y-2 sm:space-y-2.5">
+                    {section.links.map((link) => (
+                      <li key={link.label}>
+                        <a
+                          href={link.href}
+                          className="text-xs leading-snug text-white/70 transition hover:text-white sm:text-sm"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-center md:flex-row md:text-left">

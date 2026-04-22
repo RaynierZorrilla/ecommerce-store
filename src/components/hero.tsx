@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black pt-24 md:pt-28">
       <video
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full md:w-full mx-auto object-contain md:object-cover"
         autoPlay
         loop
         muted

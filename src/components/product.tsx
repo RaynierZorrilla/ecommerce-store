@@ -50,15 +50,15 @@ export function Product() {
         <div className="mx-auto max-w-6xl">
           <div className="overflow-hidden rounded-[32px] border border-zinc-200 bg-white shadow-[0_20px_80px_rgba(0,0,0,0.08)]">
             <div className="grid items-stretch lg:grid-cols-2">
-              <div className="relative flex min-h-[420px] items-center justify-center overflow-hidden bg-gradient-to-br from-zinc-100 via-white to-zinc-100 p-8 lg:p-10">
-                <div className="absolute left-8 top-8">
-                  <Badge className="rounded-full bg-zinc-950 px-4 py-1.5 text-white hover:bg-zinc-950">
+              <div className="relative flex min-h-[380px] items-center justify-center overflow-hidden bg-gradient-to-br from-zinc-100 via-white to-zinc-100 p-6 pt-24 sm:min-h-[420px] sm:p-8 sm:pt-8 lg:p-10">
+                <div className="absolute left-4 top-6 sm:left-8 sm:top-8">
+                  <Badge className="rounded-full bg-zinc-950 px-3 py-1 text-xs text-white hover:bg-zinc-950 sm:px-4 sm:py-1.5 sm:text-sm">
                     Most Popular
                   </Badge>
                 </div>
 
-                <div className="absolute right-8 top-8">
-                  <Badge className="rounded-full bg-red-600 px-4 py-1.5 text-white hover:bg-red-600">
+                <div className="absolute right-4 top-6 sm:right-8 sm:top-8">
+                  <Badge className="rounded-full bg-red-600 px-3 py-1 text-xs text-white hover:bg-red-600 sm:px-4 sm:py-1.5 sm:text-sm">
                     Limited-Time Offer
                   </Badge>
                 </div>
@@ -69,7 +69,7 @@ export function Product() {
                   <motion.img
                     src="/small-kit.png"
                     alt="Newer Lights Restoration Kit"
-                    className="mx-auto h-[320px] w-[320px] rounded-3xl object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.18)] transition-transform duration-300 hover:scale-[1.03] md:h-[380px] md:w-[380px]"
+                    className="mx-auto h-[260px] w-[260px] rounded-3xl object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.18)] transition-transform duration-300 hover:scale-[1.03] sm:h-[320px] sm:w-[320px] md:h-[380px] md:w-[380px]"
                     whileHover={{ y: -4 }}
                     transition={{ duration: 0.25 }}
                   />

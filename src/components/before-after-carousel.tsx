@@ -61,36 +61,54 @@ export function BeforeAfterCarousel() {
           <div className="overflow-hidden rounded-[28px] border border-zinc-200 bg-white shadow-[0_20px_80px_rgba(0,0,0,0.10)]">
             <div className="grid items-center gap-0 lg:grid-cols-[1.15fr_0.85fr]">
               <div className="relative p-4 md:p-6">
-                <div className="relative overflow-hidden rounded-[24px] bg-zinc-100">
-                  <AnimatePresence mode="wait">
-                    <motion.img
-                      key={carouselImages[currentIndex]}
-                      src={carouselImages[currentIndex]}
-                      alt={`Before and after result ${currentIndex + 1}`}
-                      className="h-full w-full object-cover"
-                      loading="lazy"
-                      initial={{ opacity: 0, scale: 1.03 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 1.01 }}
-                      transition={{ duration: 0.45, ease: "easeOut" }}
-                    />
-                  </AnimatePresence>
+                <div className="relative overflow-visible rounded-[24px]">
+                  <div className="overflow-hidden rounded-[24px] bg-zinc-100">
+                    <AnimatePresence mode="wait">
+                      <motion.img
+                        key={carouselImages[currentIndex]}
+                        src={carouselImages[currentIndex]}
+                        alt={`Before and after result ${currentIndex + 1}`}
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                        initial={{ opacity: 0, scale: 1.03 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 1.01 }}
+                        transition={{ duration: 0.45, ease: "easeOut" }}
+                      />
+                    </AnimatePresence>
 
-                  <div className="pointer-events-none absolute inset-x-0 top-4 flex items-center justify-between px-4">
-                    <span className="rounded-full bg-black/75 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
-                      Before
-                    </span>
-                    <span className="rounded-full bg-red-600 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white shadow-lg">
-                      After
-                    </span>
+                    <div className="pointer-events-none absolute inset-x-0 top-4 flex items-center justify-between px-4">
+                      <span className="rounded-full bg-black/75 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
+                        Before
+                      </span>
+                      <span className="rounded-full bg-red-600 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white shadow-lg">
+                        After
+                      </span>
+                    </div>
+
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/35 to-transparent" />
+
+                    <div className="absolute inset-x-0 bottom-4 flex justify-center gap-2">
+                      {carouselImages.map((_, index) => (
+                        <button
+                          key={index}
+                          type="button"
+                          onClick={() => setCurrentIndex(index)}
+                          className={`h-2.5 rounded-full transition-all ${
+                            currentIndex === index ? "w-8 bg-red-600" : "w-2.5 bg-white/80"
+                          }`}
+                          aria-label={`Go to image ${index + 1}`}
+                        />
+                      ))}
+                    </div>
                   </div>
 
-                  <div className="absolute inset-y-0 left-4 flex items-center">
+                  <div className="absolute inset-y-0 -left-4 hidden items-center md:flex">
                     <Button
                       type="button"
                       variant="secondary"
                       size="icon"
-                      className="h-11 w-11 rounded-full border border-white/50 bg-white/85 shadow-md backdrop-blur hover:bg-white"
+                      className="h-11 w-11 rounded-full border border-white/60 bg-white/90 shadow-md backdrop-blur hover:bg-white"
                       onClick={goToPrevious}
                       aria-label="Previous image"
                     >
@@ -98,33 +116,17 @@ export function BeforeAfterCarousel() {
                     </Button>
                   </div>
 
-                  <div className="absolute inset-y-0 right-4 flex items-center">
+                  <div className="absolute inset-y-0 -right-4 hidden items-center md:flex">
                     <Button
                       type="button"
                       variant="secondary"
                       size="icon"
-                      className="h-11 w-11 rounded-full border border-white/50 bg-white/85 shadow-md backdrop-blur hover:bg-white"
+                      className="h-11 w-11 rounded-full border border-white/60 bg-white/90 shadow-md backdrop-blur hover:bg-white"
                       onClick={goToNext}
                       aria-label="Next image"
                     >
                       <ChevronRight className="h-5 w-5" />
                     </Button>
-                  </div>
-
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/35 to-transparent" />
-
-                  <div className="absolute inset-x-0 bottom-4 flex justify-center gap-2">
-                    {carouselImages.map((_, index) => (
-                      <button
-                        key={index}
-                        type="button"
-                        onClick={() => setCurrentIndex(index)}
-                        className={`h-2.5 rounded-full transition-all ${
-                          currentIndex === index ? "w-8 bg-red-600" : "w-2.5 bg-white/80"
-                        }`}
-                        aria-label={`Go to image ${index + 1}`}
-                      />
-                    ))}
                   </div>
                 </div>
 
