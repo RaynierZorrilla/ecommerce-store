@@ -29,8 +29,8 @@ export function Hero() {
 
           <h1 className="text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-5xl md:text-7xl lg:text-[5.5rem]">
             Restore Your Headlights
-            <span className="mt-2 block text-transparent [-webkit-text-stroke:1.5px_white]">
-              Like New in 5 Minutes
+            <span className="text-primary block mt-2" style={{ textShadow: "-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff", }} >
+              Like New in 5 Minutes 
             </span>
           </h1>
 
