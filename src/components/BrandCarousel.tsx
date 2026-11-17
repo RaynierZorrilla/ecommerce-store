@@ -14,7 +14,7 @@ const brands = [
 
 export default function BrandCarousel() {
   return (
-    <section className="py-14 bg-secondary/30" aria-label="Associated brands">
+    <section className="py-14 bg-secondary/30" aria-label="Marcas asociadas">
       <div className="container mx-auto px-4">
         <Swiper
           modules={[Autoplay]}
@@ -31,7 +31,7 @@ export default function BrandCarousel() {
             <SwiperSlide key={brand}>
               <img
                 src={brand}
-                alt={`brand-${index + 1}`}
+                alt={`Marca ${index + 1}`}
                 className="h-24 md:h-28 mx-auto object-contain transition"
                 loading="lazy"
               />

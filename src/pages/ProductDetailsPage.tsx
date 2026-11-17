@@ -18,42 +18,42 @@ import { motion } from "framer-motion"
 
 const steps = [
   {
-    title: "Apply Nano Cleaner",
-    description: "Spray the Nano Cleaner generously over the headlight surface.",
+    title: "Aplica Nano Cleaner",
+    description: "Rocía abundante Nano Cleaner sobre la superficie del faro.",
     image: "/step-1.webp",
   },
   {
-    title: "Scrub with Steel Wool",
-    description: "Scrub thoroughly to remove oxidation, dirt, and surface buildup.",
+    title: "Frota con lana de acero",
+    description: "Frota bien para eliminar la oxidación, la suciedad y los residuos acumulados.",
     image: "/step-2.webp",
   },
   {
-    title: "Wipe Surface Clean",
-    description: "Use a clean cloth to wipe away residue before coating.",
+    title: "Limpia la superficie",
+    description: "Usa un paño limpio para retirar los residuos antes de aplicar el recubrimiento.",
     image: "/step-3.webp",
   },
   {
-    title: "Add Nano Coat",
-    description: "Dispense about six squirts of Nano Coat onto the sponge brush.",
+    title: "Añade Nano Coat",
+    description: "Aplica unas seis dosis de Nano Coat en el aplicador de esponja.",
     image: "/step-4.webp",
   },
   {
-    title: "Apply with Pressure",
-    description: "Use firm pressure to spread the coating smoothly across the headlight.",
+    title: "Aplica con presión",
+    description: "Presiona con firmeza para distribuir el recubrimiento de manera uniforme sobre el faro.",
     image: "/step-5.webp",
   },
   {
-    title: "Coat in Horizontal Passes",
-    description: "Apply in continuous horizontal motions until evenly coated.",
+    title: "Recubre con pasadas horizontales",
+    description: "Aplica con movimientos horizontales continuos hasta cubrir de manera uniforme.",
     image: "/step-6.webp",
   },
 ]
 
 const quickBenefits = [
-  "Works on up to 4 cars",
-  "Easy 5-minute application",
-  "No sanding machine required",
-  "Professional-grade finish",
+  "Rinde para hasta 4 vehículos",
+  "Aplicación sencilla en 5 minutos",
+  "No requiere lijadora",
+  "Acabado profesional",
 ]
 
 export function ProductDetailsPage() {
@@ -63,13 +63,13 @@ export function ProductDetailsPage() {
   const handleAddToCart = () => {
     addItem({
       id: "small-kit-4-cars",
-      name: "Small kit - 4 cars",
+      name: "Kit pequeño - 4 vehículos",
       price: 42.99,
       image: "/small-kit.png",
     })
 
-    toast.success("Item added to cart", {
-      description: "Small kit - 4 cars",
+    toast.success("Producto agregado al carrito", {
+      description: "Kit pequeño - 4 vehículos",
     })
   }
 
@@ -82,7 +82,7 @@ export function ProductDetailsPage() {
             className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-zinc-500 transition hover:text-zinc-900"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to home
+            Volver al inicio
           </Link>
 
           <div className="overflow-hidden rounded-[32px] border border-zinc-200 bg-white shadow-[0_20px_80px_rgba(0,0,0,0.06)]">
@@ -91,18 +91,18 @@ export function ProductDetailsPage() {
                 <div className="absolute h-72 w-72 rounded-full bg-red-500/10 blur-3xl" />
                 <div className="absolute left-4 top-6 sm:left-6 sm:top-6">
                   <Badge className="rounded-full bg-zinc-950 px-3 py-1 text-xs text-white hover:bg-zinc-950 sm:px-4 sm:py-1.5 sm:text-sm">
-                    Best Seller
+                    Más vendido
                   </Badge>
                 </div>
                 <div className="absolute right-4 top-6 sm:right-6 sm:top-6">
                   <Badge className="rounded-full bg-red-600 px-3 py-1 text-xs text-white hover:bg-red-600 sm:px-4 sm:py-1.5 sm:text-sm">
-                    4 Cars per Kit
+                    4 vehículos por kit
                   </Badge>
                 </div>
 
                 <motion.img
                   src="/small-kit.png"
-                  alt="Small kit - 4 cars"
+                  alt="Kit pequeño - 4 vehículos"
                   className="relative w-full max-w-[350px] rounded-[28px] object-contain drop-shadow-[0_24px_40px_rgba(0,0,0,0.14)] sm:max-w-md md:max-w-lg"
                   initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -117,18 +117,16 @@ export function ProductDetailsPage() {
                       <Star key={i} className="h-4 w-4 fill-yellow-500 text-yellow-500" />
                     ))}
                   </div>
-                  <span className="text-sm font-medium text-zinc-700">4.9/5 rating</span>
-                  <span className="text-sm text-zinc-500">(2,847 reviews)</span>
+                  <span className="text-sm font-medium text-zinc-700">Valoración de 4.9/5</span>
+                  <span className="text-sm text-zinc-500">(2,847 reseñas)</span>
                 </div>
 
                 <h1 className="text-3xl font-extrabold tracking-tight text-zinc-900 md:text-5xl">
-                  Small kit - 4 cars
+                  Kit pequeño - 4 vehículos
                 </h1>
 
                 <p className="mt-4 max-w-xl text-lg leading-8 text-zinc-600">
-                  Complete headlight restoration kit with Nano Cleaner, Nano Coat,
-                  sponge applicator, and steel wool cloth for a clearer, more
-                  professional finish.
+                  Kit completo de restauración de faros con Nano Cleaner, Nano Coat, aplicador de esponja y lana de acero para un acabado más transparente y profesional.
                 </p>
 
                 <div className="mt-6 rounded-2xl border border-red-100 bg-red-50/60 p-5">
@@ -137,11 +135,11 @@ export function ProductDetailsPage() {
                       $42.99
                     </span>
                     <span className="pb-1 text-lg text-zinc-500">
-                      (Actual price $39.99 + $3 shipping)
+                      (Precio del producto: $39.99 + $3 de envío)
                     </span>
                   </div>
                   <p className="mt-2 text-sm font-medium text-red-600">
-                    Professional-grade restoration at a fraction of detailing shop cost
+                    Restauración profesional por una fracción del costo de un taller especializado
                   </p>
                 </div>
 
@@ -164,65 +162,59 @@ export function ProductDetailsPage() {
                     onClick={handleAddToCart}
                   >
                     <ShoppingCart className="mr-2 h-5 w-5" />
-                    Add to Cart
+                    Agregar al carrito
                   </Button>
 
                   <a
                     href="#instructions"
                     className="inline-flex h-14 items-center justify-center rounded-full border border-zinc-200 px-8 text-base font-semibold text-zinc-800 transition hover:bg-zinc-50"
                   >
-                    View Instructions
+                    Ver instrucciones
                   </a>
                 </div>
 
                 <div className="mt-6 grid gap-3 sm:grid-cols-3">
                   <div className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-3 text-sm text-zinc-700">
                     <Truck className="h-4 w-4 text-red-600" />
-                    Fast shipping
+                    Envío rápido
                   </div>
                   <div className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-3 text-sm text-zinc-700">
                     <ShieldCheck className="h-4 w-4 text-red-600" />
-                    Secure checkout
+                    Pago seguro
                   </div>
                   <div className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-3 text-sm text-zinc-700">
                     <BadgeDollarSign className="h-4 w-4 text-red-600" />
-                    Great value
+                    Excelente relación calidad-precio
                   </div>
                 </div>
 
                 <div className="mt-8 rounded-[28px] border border-zinc-200 bg-white p-6 shadow-sm">
                   <p className="text-sm leading-7 text-zinc-600">
-                    Introducing the Newer Lights Small Headlight Restoration Kit —
-                    your key to achieving professional-grade clarity from the comfort
-                    of your garage. This kit includes everything you need to restore
-                    faded headlights and improve the appearance of your vehicle.
+                    Conoce el kit pequeño de restauración de faros Newer Lights, tu aliado para lograr una transparencia profesional desde la comodidad de tu garaje. Incluye todo lo necesario para restaurar faros opacos y mejorar la apariencia de tu vehículo.
                   </p>
 
                   <div className="mt-5 space-y-3 text-sm leading-7 text-zinc-600">
-                    <p className="font-semibold text-zinc-900">What&apos;s Inside:</p>
+                    <p className="font-semibold text-zinc-900">Contenido del kit:</p>
                     <p>
-                      <span className="font-semibold text-zinc-900">Brush:</span> Designed for
-                      easy, precise application.
+                      <span className="font-semibold text-zinc-900">Aplicador:</span> Diseñado para una aplicación fácil y precisa.
                     </p>
                     <p>
-                      <span className="font-semibold text-zinc-900">Nano Coat (2oz):</span> Adds
-                      protection and a crystal-clear finish.
+                      <span className="font-semibold text-zinc-900">Nano Coat (2 oz):</span> Aporta protección y un acabado transparente.
                     </p>
 
                     {showMore && (
                       <>
                         <p>
-                          <span className="font-semibold text-zinc-900">Cleaner (4oz):</span>{" "}
-                          Helps remove grime, oxidation, and haze.
+                          <span className="font-semibold text-zinc-900">Limpiador (4 oz):</span>{" "}
+                          Ayuda a eliminar la suciedad, la oxidación y la opacidad.
                         </p>
                         <p>
-                          <span className="font-semibold text-zinc-900">Steel Wool:</span> Helps
-                          smooth the surface and remove stubborn buildup.
+                          <span className="font-semibold text-zinc-900">Lana de acero:</span> Ayuda a alisar la superficie y eliminar los residuos difíciles.
                         </p>
-                        <p className="font-semibold text-zinc-900">Why it stands out:</p>
-                        <p>Trusted by detailers and used for professional-looking results.</p>
-                        <p>Each kit can restore up to 4 vehicles.</p>
-                        <p>No sanding machine or complicated process required.</p>
+                        <p className="font-semibold text-zinc-900">Por qué se destaca:</p>
+                        <p>La elección de especialistas en estética automotriz para lograr resultados profesionales.</p>
+                        <p>Cada kit permite restaurar hasta 4 vehículos.</p>
+                        <p>No requiere lijadora ni procesos complicados.</p>
                       </>
                     )}
                   </div>
@@ -232,7 +224,7 @@ export function ProductDetailsPage() {
                     onClick={() => setShowMore((prev) => !prev)}
                     className="mt-4 font-medium text-red-600 transition hover:underline"
                   >
-                    {showMore ? "Show less" : "Show more"}
+                    {showMore ? "Mostrar menos" : "Mostrar más"}
                   </button>
                 </div>
               </div>
@@ -242,10 +234,10 @@ export function ProductDetailsPage() {
           <section id="instructions" className="pt-16 md:pt-20">
             <div className="mb-10">
               <h2 className="text-3xl font-extrabold tracking-tight text-zinc-900 md:text-4xl">
-                Instructions
+                Instrucciones
               </h2>
               <p className="mt-3 max-w-2xl text-lg text-zinc-600">
-                Follow these six steps for a clean, even, professional-looking restoration.
+                Sigue estos seis pasos para lograr una restauración limpia, uniforme y de aspecto profesional.
               </p>
             </div>
 
@@ -269,7 +261,7 @@ export function ProductDetailsPage() {
 
                   <div className="p-6">
                     <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-red-600">
-                      Step {index + 1}
+                      Paso {index + 1}
                     </p>
                     <h3 className="text-xl font-bold text-zinc-900">{step.title}</h3>
                     <p className="mt-3 text-sm leading-7 text-zinc-600">{step.description}</p>

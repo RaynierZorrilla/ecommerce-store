@@ -12,12 +12,12 @@ import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 
 const features = [
-  "Professional-grade restoration formula",
-  "UV protective coating included",
-  "Works on all headlight types",
-  "Complete application kit included",
-  "Easy 5-minute application",
-  "Lasts up to 3 years",
+  "Fórmula de restauración profesional",
+  "Recubrimiento protector UV incluido",
+  "Compatible con todo tipo de faros",
+  "Kit completo de aplicación incluido",
+  "Aplicación sencilla en 5 minutos",
+  "Dura hasta 3 años",
 ]
 
 export function Product() {
@@ -34,16 +34,15 @@ export function Product() {
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <div className="mb-4 inline-flex items-center rounded-full border border-red-200 bg-red-50 px-4 py-1.5 text-sm font-medium text-red-600">
-            Best-selling restoration kit
+            El kit de restauración más vendido
           </div>
 
           <h2 className="text-4xl font-extrabold tracking-tight text-zinc-900 md:text-5xl">
-            Our Best-Selling Kit
+            Nuestro kit más vendido
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-zinc-600">
-            Everything you need to restore faded headlights and give your car a
-            cleaner, sharper, more professional look.
+            Todo lo que necesitas para restaurar faros opacos y darle a tu vehículo una apariencia más limpia, definida y profesional.
           </p>
         </div>
 
@@ -53,13 +52,13 @@ export function Product() {
               <div className="relative flex min-h-[380px] items-center justify-center overflow-hidden bg-gradient-to-br from-zinc-100 via-white to-zinc-100 p-6 pt-24 sm:min-h-[420px] sm:p-8 sm:pt-8 lg:p-10">
                 <div className="absolute left-4 top-6 sm:left-8 sm:top-8">
                   <Badge className="rounded-full bg-zinc-950 px-3 py-1 text-xs text-white hover:bg-zinc-950 sm:px-4 sm:py-1.5 sm:text-sm">
-                    Most Popular
+                    El más popular
                   </Badge>
                 </div>
 
                 <div className="absolute right-4 top-6 sm:right-8 sm:top-8">
                   <Badge className="rounded-full bg-red-600 px-3 py-1 text-xs text-white hover:bg-red-600 sm:px-4 sm:py-1.5 sm:text-sm">
-                    Limited-Time Offer
+                    Oferta por tiempo limitado
                   </Badge>
                 </div>
 
@@ -68,7 +67,7 @@ export function Product() {
                 <Link to="/product-details" className="relative">
                   <motion.img
                     src="/small-kit.png"
-                    alt="Newer Lights Restoration Kit"
+                    alt="Kit de restauración Newer Lights"
                     className="mx-auto h-[350px] w-[350px] rounded-3xl object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.18)] transition-transform duration-300 hover:scale-[1.03] sm:h-[320px] sm:w-[320px] md:h-[380px] md:w-[380px]"
                     whileHover={{ y: -4 }}
                     transition={{ duration: 0.25 }}
@@ -87,21 +86,19 @@ export function Product() {
                     ))}
                   </div>
                   <span className="text-sm font-medium text-zinc-700">
-                    4.9/5 rating
+                    Valoración de 4.9/5
                   </span>
-                  <span className="text-sm text-zinc-500">(2,847 reviews)</span>
+                  <span className="text-sm text-zinc-500">(2,847 reseñas)</span>
                 </div>
 
                 <Link to="/product-details">
                   <h3 className="text-3xl font-extrabold leading-tight text-zinc-900">
-                    Newer Lights Restoration Kit
+                    Kit de restauración Newer Lights
                   </h3>
                 </Link>
 
                 <p className="mt-4 text-base leading-7 text-zinc-600">
-                  Restore cloudy, yellowed headlights with a professional-grade
-                  kit designed to improve clarity, enhance appearance, and help
-                  protect against future oxidation.
+                  Restaura los faros opacos y amarillentos con un kit profesional diseñado para mejorar la claridad, realzar la apariencia y ayudar a protegerlos contra la oxidación.
                 </p>
 
                 <div className="mt-6 rounded-2xl border border-red-100 bg-red-50/60 p-5">
@@ -113,12 +110,12 @@ export function Product() {
                       $79.99
                     </span>
                     <Badge className="rounded-full bg-red-600 px-3 py-1 text-white hover:bg-red-600">
-                      46% OFF
+                      46 % de descuento
                     </Badge>
                   </div>
 
                   <p className="mt-2 text-sm font-medium text-red-600">
-                    Save $37 today
+                    Ahorra $37 hoy
                   </p>
                 </div>
 
@@ -143,27 +140,27 @@ export function Product() {
                 >
                   <Link to="/product-details">
                     <ShoppingCart className="mr-2 h-5 w-5" />
-                    View Product Details
+                    Ver detalles del producto
                   </Link>
                 </Button>
 
                 <div className="mt-6 grid gap-3 sm:grid-cols-3">
                   <div className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-3 text-sm text-zinc-700">
                     <Truck className="h-4 w-4 text-red-600" />
-                    Fast shipping
+                    Envío rápido
                   </div>
                   <div className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-3 text-sm text-zinc-700">
                     <ShieldCheck className="h-4 w-4 text-red-600" />
-                    Secure checkout
+                    Pago seguro
                   </div>
                   <div className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-zinc-50 px-3 py-3 text-sm text-zinc-700">
                     <BadgeDollarSign className="h-4 w-4 text-red-600" />
-                    Great value
+                    Excelente relación calidad-precio
                   </div>
                 </div>
 
                 <p className="mt-5 text-center text-sm text-zinc-500">
-                  Free shipping on orders over $50
+                  Envío gratis en pedidos de más de $50
                 </p>
               </div>
             </div>

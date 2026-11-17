@@ -5,22 +5,22 @@ import { motion } from "framer-motion"
 const stats = [
   {
     value: "15+",
-    label: "Years Experience",
+    label: "Años de experiencia",
     icon: Award,
   },
   {
     value: "500K+",
-    label: "Kits Sold",
+    label: "Kits vendidos",
     icon: Users,
   },
   {
     value: "4.9",
-    label: "Average Rating",
+    label: "Valoración promedio",
     icon: Sparkles,
   },
   {
     value: "98%",
-    label: "Satisfaction",
+    label: "Satisfacción",
     icon: ShieldCheck,
   },
 ]
@@ -38,18 +38,15 @@ export function About() {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-5xl text-center">
           <Badge className="mb-6 rounded-full border border-red-200 bg-red-50 px-4 py-1.5 text-sm font-medium text-red-600 hover:bg-red-50">
-            Our Story
+            Nuestra historia
           </Badge>
 
           <h2 className="text-4xl font-extrabold tracking-tight text-zinc-900 md:text-5xl">
-            Trusted by Professionals Since 2009
+            La confianza de los profesionales desde 2009
           </h2>
 
           <p className="mx-auto mt-6 max-w-4xl text-lg leading-8 text-zinc-600 md:text-xl">
-            What started as a solution for our own detailing business has grown
-            into one of the most trusted names in headlight restoration. Our
-            professional-grade formula is used by luxury dealerships, detailers,
-            and drivers who want cleaner, clearer, longer-lasting results.
+            Lo que comenzó como una solución para nuestro propio negocio de estética automotriz se ha convertido en una de las marcas de mayor confianza en restauración de faros. Nuestra fórmula profesional es utilizada por concesionarios de lujo, especialistas y conductores que buscan resultados más limpios, transparentes y duraderos.
           </p>
 
           <div className="mt-16 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
@@ -78,9 +75,7 @@ export function About() {
           </div>
 
           <div className="mt-12 mx-auto max-w-3xl rounded-[28px] border border-zinc-200 bg-white/80 px-6 py-5 text-sm leading-7 text-zinc-600 shadow-[0_10px_40px_rgba(0,0,0,0.04)] backdrop-blur-sm md:text-base">
-            Built from real-world detailing experience and refined over the years
-            to deliver a premium restoration finish trusted by professionals and
-            everyday drivers alike.
+            Creada a partir de nuestra experiencia en estética automotriz y perfeccionada con los años para ofrecer un acabado de alta calidad en el que confían tanto profesionales como conductores.
           </div>
         </div>
       </div>

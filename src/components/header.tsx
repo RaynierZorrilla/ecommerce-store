@@ -18,10 +18,10 @@ export function Header() {
   }, [])
 
   const navLinks = [
-    { href: "#features", label: "Benefits" },
-    { href: "#product", label: "Product" },
-    { href: "#testimonials", label: "Reviews" },
-    { href: "#about", label: "About" },
+    { href: "#features", label: "Beneficios" },
+    { href: "#product", label: "Producto" },
+    { href: "#testimonials", label: "Reseñas" },
+    { href: "#about", label: "Nosotros" },
   ]
 
   return (
@@ -63,7 +63,7 @@ export function Header() {
                 className="rounded-full bg-red-600 px-5 text-white shadow-lg shadow-red-600/20 transition hover:bg-red-700"
               >
                 <a href="#product" className="inline-flex items-center gap-2">
-                  Get My Kit
+                  Comprar mi kit
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
@@ -72,7 +72,7 @@ export function Header() {
             <button
               className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-900 transition hover:bg-zinc-50 md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
+              aria-label="Abrir o cerrar menú"
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -98,7 +98,7 @@ export function Header() {
                     className="mt-3 rounded-full bg-red-600 text-white hover:bg-red-700"
                   >
                     <a href="#product" onClick={() => setIsMenuOpen(false)}>
-                      Get My Kit
+                      Comprar mi kit
                     </a>
                   </Button>
                 </nav>

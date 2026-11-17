@@ -10,27 +10,27 @@ import { motion } from "framer-motion"
 const features = [
   {
     icon: Zap,
-    title: "Restore in Minutes",
+    title: "Restaura en minutos",
     description:
-      "Get dramatically clearer headlights with a fast and simple application process.",
+      "Consigue faros mucho más transparentes con una aplicación rápida y sencilla.",
   },
   {
     icon: ShieldCheck,
-    title: "Long-Lasting Protection",
+    title: "Protección duradera",
     description:
-      "UV-resistant protection helps prevent future yellowing and oxidation.",
+      "La protección resistente a los rayos UV ayuda a prevenir el amarilleamiento y la oxidación.",
   },
   {
     icon: Sparkles,
-    title: "Make Your Car Look Newer",
+    title: "Haz que tu vehículo luzca más nuevo",
     description:
-      "Instantly improve the appearance of your vehicle with a cleaner finish.",
+      "Mejora al instante la apariencia de tu vehículo con un acabado más limpio.",
   },
   {
     icon: Eye,
-    title: "Better Night Visibility",
+    title: "Mejor visibilidad nocturna",
     description:
-      "Cleaner headlights help improve clarity and confidence while driving at night.",
+      "Unos faros más limpios ayudan a mejorar la claridad y la confianza al conducir de noche.",
   },
 ]
 
@@ -47,16 +47,15 @@ export function Features() {
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <div className="mb-4 inline-flex items-center rounded-full border border-red-200 bg-red-50 px-4 py-1.5 text-sm font-medium text-red-600">
-            Trusted restoration solution
+            Una solución de restauración confiable
           </div>
 
           <h2 className="text-4xl font-extrabold tracking-tight text-zinc-900 md:text-5xl">
-            Why Drivers Choose Newer Lights
+            Por qué los conductores eligen Newer Lights
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-zinc-600">
-            Restore faded headlights with a professional-grade solution designed
-            to improve clarity, appearance, and long-term protection.
+            Restaura los faros opacos con una solución profesional diseñada para mejorar la claridad, la apariencia y la protección a largo plazo.
           </p>
         </div>
 
@@ -96,21 +95,21 @@ export function Features() {
           <div className="text-center">
             <h3 className="text-4xl font-black text-zinc-900">5 min</h3>
             <p className="mt-2 text-sm text-zinc-600">
-              Fast application process
+              Aplicación rápida
             </p>
           </div>
 
           <div className="text-center">
             <h3 className="text-4xl font-black text-zinc-900">2009</h3>
             <p className="mt-2 text-sm text-zinc-600">
-              Trusted restoration formula
+              Fórmula de restauración confiable
             </p>
           </div>
 
           <div className="text-center">
-            <h3 className="text-4xl font-black text-zinc-900">UV Shield</h3>
+            <h3 className="text-4xl font-black text-zinc-900">Protección UV</h3>
             <p className="mt-2 text-sm text-zinc-600">
-              Long-lasting protection layer
+              Capa de protección duradera
             </p>
           </div>
         </div>

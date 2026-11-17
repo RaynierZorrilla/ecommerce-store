@@ -6,19 +6,19 @@ const testimonials = [
     image: "/testimonial01.webp",
     name: "Brandon",
     quote:
-      "Absolutely outstanding service. The Newer Lights Kit brought a new life to my foggy headlights and made my car look much better.",
+      "Un servicio excepcional. El kit Newer Lights les devolvió la vida a mis faros opacos y mejoró mucho la apariencia de mi vehículo.",
   },
   {
     image: "/testimonial02.webp",
     name: "Balbir Cure",
     quote:
-      "Newer Lights Kits transformed our headlight restoration services, saved time, and helped us deliver better-looking results to customers.",
+      "Los kits Newer Lights transformaron nuestros servicios de restauración de faros, nos ahorraron tiempo y nos ayudaron a ofrecer mejores resultados a nuestros clientes.",
   },
   {
     image: "/testimonial03.webp",
     name: "Fidel",
     quote:
-      "A real game-changer. My headlights look brighter, cleaner, and I feel much more confident driving at night.",
+      "Una diferencia enorme. Mis faros lucen más brillantes y limpios, y me siento mucho más seguro al conducir de noche.",
   },
 ]
 
@@ -51,16 +51,15 @@ export function Testimonials() {
       <div className="relative z-10 container mx-auto px-4">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <div className="mb-4 inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-sm font-medium text-white/90 backdrop-blur">
-            Trusted by real customers
+            La confianza de clientes reales
           </div>
 
           <h2 className="text-4xl font-extrabold tracking-tight text-white md:text-5xl">
-            What Our Customers Say
+            Lo que dicen nuestros clientes
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-white/75">
-            Real feedback from customers who restored their headlights and upgraded
-            the look of their vehicles.
+            Opiniones reales de clientes que restauraron sus faros y mejoraron la apariencia de sus vehículos.
           </p>
         </div>
 
@@ -85,7 +84,7 @@ export function Testimonials() {
 
                 <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-zinc-900">
                   <BadgeCheck className="h-4 w-4 text-red-600" />
-                  Verified customer
+                  Cliente verificado
                 </div>
               </div>
 
@@ -95,7 +94,7 @@ export function Testimonials() {
                     <h3 className="text-lg font-bold text-zinc-900">
                       {testimonial.name}
                     </h3>
-                    <p className="text-sm text-zinc-500">Verified buyer</p>
+                    <p className="text-sm text-zinc-500">Compra verificada</p>
                   </div>
 
                   <div className="flex items-center gap-1">

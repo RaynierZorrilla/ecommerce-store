@@ -44,16 +44,15 @@ export function BeforeAfterCarousel() {
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-4 py-1.5 text-sm font-medium text-red-600">
             <Sparkles className="h-4 w-4" />
-            Real customer results
+            Resultados de clientes reales
           </div>
 
           <h2 className="text-4xl font-extrabold tracking-tight text-zinc-900 md:text-5xl">
-            See the Difference Instantly
+            Nota la diferencia al instante
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-zinc-600 md:text-lg">
-            Restore cloudy, yellowed headlights into a cleaner, sharper finish that makes your car
-            look newer and helps improve night-time visibility.
+            Restaura los faros opacos y amarillentos para lograr un acabado más limpio y definido que rejuvenece tu vehículo y ayuda a mejorar la visibilidad nocturna.
           </p>
         </div>
 
@@ -67,7 +66,7 @@ export function BeforeAfterCarousel() {
                       <motion.img
                         key={carouselImages[currentIndex]}
                         src={carouselImages[currentIndex]}
-                        alt={`Before and after result ${currentIndex + 1}`}
+                        alt={`Resultado antes y después ${currentIndex + 1}`}
                         className="h-full w-full object-cover"
                         loading="lazy"
                         initial={{ opacity: 0, scale: 1.03 }}
@@ -79,10 +78,10 @@ export function BeforeAfterCarousel() {
 
                     <div className="pointer-events-none absolute inset-x-0 top-4 flex items-center justify-between px-4">
                       <span className="rounded-full bg-black/75 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
-                        Before
+                        Antes
                       </span>
                       <span className="rounded-full bg-red-600 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white shadow-lg">
-                        After
+                        Después
                       </span>
                     </div>
 
@@ -97,7 +96,7 @@ export function BeforeAfterCarousel() {
                           className={`h-2.5 rounded-full transition-all ${
                             currentIndex === index ? "w-8 bg-red-600" : "w-2.5 bg-white/80"
                           }`}
-                          aria-label={`Go to image ${index + 1}`}
+                          aria-label={`Ir a la imagen ${index + 1}`}
                         />
                       ))}
                     </div>
@@ -110,7 +109,7 @@ export function BeforeAfterCarousel() {
                       size="icon"
                       className="h-11 w-11 rounded-full border border-white/60 bg-white/90 shadow-md backdrop-blur hover:bg-white"
                       onClick={goToPrevious}
-                      aria-label="Previous image"
+                      aria-label="Imagen anterior"
                     >
                       <ChevronLeft className="h-5 w-5" />
                     </Button>
@@ -123,7 +122,7 @@ export function BeforeAfterCarousel() {
                       size="icon"
                       className="h-11 w-11 rounded-full border border-white/60 bg-white/90 shadow-md backdrop-blur hover:bg-white"
                       onClick={goToNext}
-                      aria-label="Next image"
+                      aria-label="Imagen siguiente"
                     >
                       <ChevronRight className="h-5 w-5" />
                     </Button>
@@ -144,7 +143,7 @@ export function BeforeAfterCarousel() {
                     >
                       <img
                         src={image}
-                        alt={`Thumbnail ${index + 1}`}
+                        alt={`Miniatura ${index + 1}`}
                         className="h-16 w-24 object-cover md:h-20 md:w-28"
                         loading="lazy"
                       />
@@ -156,16 +155,15 @@ export function BeforeAfterCarousel() {
               <div className="flex h-full flex-col justify-center border-t border-zinc-200 p-6 lg:border-l lg:border-t-0 lg:p-10">
                 <div className="max-w-md">
                   <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-600">
-                    Professional restoration
+                    Restauración profesional
                   </p>
 
                   <h3 className="mt-3 text-3xl font-bold leading-tight text-zinc-900">
-                    Turn dull headlights into a cleaner, brighter finish
+                    Devuélveles la claridad y el brillo a tus faros opacos
                   </h3>
 
                   <p className="mt-4 text-base leading-7 text-zinc-600">
-                    Our restoration kit helps remove oxidation and haze so your headlights look
-                    clearer, more polished, and more presentable.
+                    Nuestro kit de restauración ayuda a eliminar la oxidación y la opacidad para que tus faros luzcan más transparentes, pulidos y cuidados.
                   </p>
 
                   <div className="mt-8 space-y-4">
@@ -174,9 +172,9 @@ export function BeforeAfterCarousel() {
                         <Eye className="h-5 w-5" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-zinc-900">Improved clarity</h4>
+                        <h4 className="font-semibold text-zinc-900">Mayor claridad</h4>
                         <p className="text-sm text-zinc-600">
-                          Cleaner lenses help your vehicle look more cared for and visible.
+                          Unos faros más limpios ayudan a que tu vehículo luzca mejor cuidado y sea más visible.
                         </p>
                       </div>
                     </div>
@@ -186,9 +184,9 @@ export function BeforeAfterCarousel() {
                         <Sparkles className="h-5 w-5" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-zinc-900">Like-new appearance</h4>
+                        <h4 className="font-semibold text-zinc-900">Apariencia como nueva</h4>
                         <p className="text-sm text-zinc-600">
-                          A sharper finish instantly upgrades the front look of the car.
+                          Un acabado más definido mejora al instante la apariencia frontal del vehículo.
                         </p>
                       </div>
                     </div>
@@ -198,9 +196,9 @@ export function BeforeAfterCarousel() {
                         <ShieldCheck className="h-5 w-5" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-zinc-900">Trusted results</h4>
+                        <h4 className="font-semibold text-zinc-900">Resultados confiables</h4>
                         <p className="text-sm text-zinc-600">
-                          Real transformations that help build confidence before purchase.
+                          Transformaciones reales que te dan confianza antes de comprar.
                         </p>
                       </div>
                     </div>
@@ -211,7 +209,7 @@ export function BeforeAfterCarousel() {
                       href="/product-details"
                       className="inline-flex items-center justify-center rounded-full bg-red-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-red-600/20 transition hover:bg-red-700"
                     >
-                      Get Your Kit Now
+                      Consigue tu kit ahora
                     </a>
                   </div>
                 </div>

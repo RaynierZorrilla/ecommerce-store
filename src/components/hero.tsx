@@ -24,20 +24,18 @@ export function Hero() {
         <div className="mx-auto max-w-5xl text-center">
           <Badge className="mb-6 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm hover:bg-white/10">
             <Sparkles className="mr-2 h-4 w-4" />
-            Trusted Since 2009
+            Tu confianza desde 2009
           </Badge>
 
           <h1 className="text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-5xl md:text-7xl lg:text-[5.5rem]">
-            Restore Your Headlights
+            Restaura tus faros
             <span className="text-primary block mt-2" style={{ textShadow: "-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff", }} >
-              Like New in 5 Minutes 
+              Como nuevos en 5 minutos
             </span>
           </h1>
 
           <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-white/80 md:text-2xl md:leading-10">
-            Professional-grade headlight restoration kit trusted by drivers,
-            detailers, and dealerships. Get crystal-clear headlights without
-            expensive replacements.
+            Kit profesional de restauración de faros en el que confían conductores, especialistas y concesionarios. Consigue faros transparentes sin gastar en reemplazos costosos.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -47,7 +45,7 @@ export function Hero() {
               className="h-14 rounded-full bg-red-600 px-8 text-base font-semibold text-white shadow-[0_12px_30px_rgba(255,0,0,0.25)] hover:bg-red-700 md:h-16 md:px-10 md:text-lg"
             >
               <a href="#product" className="inline-flex items-center gap-2">
-                Get Your Kit Now
+                Consigue tu kit ahora
                 <ArrowRight className="h-5 w-5" />
               </a>
             </Button>
@@ -58,24 +56,24 @@ export function Hero() {
               asChild
               className="h-14 rounded-full border-white/20 bg-white/10 px-8 text-base font-semibold text-white backdrop-blur-sm hover:bg-white/15 hover:text-white md:h-16 md:px-10 md:text-lg"
             >
-              <a href="#features">Learn More</a>
+              <a href="#features">Más información</a>
             </Button>
           </div>
 
           <div className="mx-auto mt-12 flex max-w-3xl flex-wrap items-center justify-center gap-3 md:gap-4">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/85 backdrop-blur-sm">
               <ShieldCheck className="h-4 w-4 text-red-400" />
-              <span>30-Day Guarantee</span>
+              <span>Garantía de 30 días</span>
             </div>
 
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/85 backdrop-blur-sm">
               <Clock3 className="h-4 w-4 text-red-400" />
-              <span>5-Minute Application</span>
+              <span>Aplicación en 5 minutos</span>
             </div>
 
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/85 backdrop-blur-sm">
               <Sparkles className="h-4 w-4 text-red-400" />
-              <span>Professional Results</span>
+              <span>Resultados profesionales</span>
             </div>
           </div>
         </div>

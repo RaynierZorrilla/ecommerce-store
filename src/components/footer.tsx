@@ -8,27 +8,27 @@ const socialLinks = [
 
 const footerLinks = [
   {
-    title: "Shop",
+    title: "Tienda",
     links: [
-      { label: "Products", href: "#product" },
-      { label: "Reviews", href: "#testimonials" },
-      { label: "FAQ", href: "#" },
+      { label: "Productos", href: "#product" },
+      { label: "Reseñas", href: "#testimonials" },
+      { label: "Preguntas frecuentes", href: "#" },
     ],
   },
   {
-    title: "Company",
+    title: "Empresa",
     links: [
-      { label: "About Us", href: "#about" },
-      { label: "Contact", href: "#" },
-      { label: "Careers", href: "#" },
+      { label: "Sobre nosotros", href: "#about" },
+      { label: "Contacto", href: "#" },
+      { label: "Trabaja con nosotros", href: "#" },
     ],
   },
   {
-    title: "Support",
+    title: "Soporte",
     links: [
-      { label: "Help Center", href: "#" },
-      { label: "Shipping", href: "#" },
-      { label: "Returns", href: "#" },
+      { label: "Centro de ayuda", href: "#" },
+      { label: "Envío", href: "#" },
+      { label: "Devoluciones", href: "#" },
     ],
   },
 ]
@@ -67,13 +67,13 @@ export function Footer() {
             <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
               <div className="max-w-2xl">
                 <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-red-400">
-                  Ready to upgrade your headlights?
+                  ¿Listo para renovar tus faros?
                 </p>
                 <h2 className="text-3xl font-extrabold tracking-tight text-white md:text-4xl">
-                  Give your car a cleaner, brighter, more premium look.
+                  Dale a tu vehículo una apariencia más limpia, brillante y elegante.
                 </h2>
                 <p className="mt-4 max-w-xl text-base leading-7 text-white/70">
-                  Shop the restoration kit trusted by professionals and drivers who want real results.
+                  Compra el kit de restauración en el que confían profesionales y conductores que buscan resultados reales.
                 </p>
               </div>
 
@@ -81,7 +81,7 @@ export function Footer() {
                 href="#product"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-red-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-red-600/20 transition hover:bg-red-700"
               >
-                Get My Kit
+                Comprar mi kit
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
@@ -96,7 +96,7 @@ export function Footer() {
               />
 
               <p className="mt-5 max-w-md text-base leading-8 text-white/70">
-                Professional-grade headlight restoration trusted by drivers, detailers, and dealerships since 2009.
+                Restauración profesional de faros con la confianza de conductores, especialistas y concesionarios desde 2009.
               </p>
 
               <div className="mt-6 flex items-center justify-center gap-3 lg:justify-start">
@@ -141,15 +141,15 @@ export function Footer() {
 
           <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-center md:flex-row md:text-left">
             <p className="text-sm text-white/55">
-              © {currentYear} Newerlights LLC. All rights reserved.
+              © {currentYear} Newerlights LLC. Todos los derechos reservados.
             </p>
 
             <div className="flex items-center gap-6 text-sm text-white/55">
               <a href="#" className="transition hover:text-white">
-                Privacy Policy
+                Política de privacidad
               </a>
               <a href="#" className="transition hover:text-white">
-                Terms of Service
+                Términos del servicio
               </a>
             </div>
           </div>

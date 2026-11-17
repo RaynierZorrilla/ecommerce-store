@@ -35,52 +35,52 @@ export function CheckoutPage() {
             className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-zinc-500 transition hover:text-zinc-900"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to cart
+            Volver al carrito
           </Link>
 
           <div className="mb-8">
             <h1 className="text-4xl font-extrabold tracking-tight text-zinc-900 md:text-5xl">
-              Checkout
+              Finalizar compra
             </h1>
             <p className="mt-3 text-base text-zinc-600 md:text-lg">
-              Complete your order securely and get your restoration kit delivered fast.
+              Completa tu pedido de forma segura y recibe tu kit de restauración rápidamente.
             </p>
           </div>
 
           <section className="grid gap-6 lg:grid-cols-[1.65fr_0.9fr]">
             <div className="rounded-[32px] border border-zinc-200 bg-white p-6 shadow-[0_16px_50px_rgba(0,0,0,0.05)] md:p-8">
               <div>
-                <h2 className="text-2xl font-bold text-zinc-900">Customer information</h2>
+                <h2 className="text-2xl font-bold text-zinc-900">Información del cliente</h2>
 
                 <div className="mt-5 grid gap-3 sm:grid-cols-2">
                   <input
                     type="text"
-                    placeholder="First name"
+                    placeholder="Nombre"
                     className="h-12 rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-red-500"
                   />
                   <input
                     type="text"
-                    placeholder="Last name"
+                    placeholder="Apellido"
                     className="h-12 rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-red-500"
                   />
                   <input
                     type="email"
-                    placeholder="Email address"
+                    placeholder="Correo electrónico"
                     className="h-12 rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-red-500 sm:col-span-2"
                   />
                   <input
                     type="text"
-                    placeholder="Address"
+                    placeholder="Dirección"
                     className="h-12 rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-red-500 sm:col-span-2"
                   />
                   <input
                     type="text"
-                    placeholder="City / Country"
+                    placeholder="Ciudad / País"
                     className="h-12 rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-red-500"
                   />
                   <input
                     type="text"
-                    placeholder="Postal code"
+                    placeholder="Código postal"
                     className="h-12 rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-red-500"
                   />
                 </div>
@@ -88,7 +88,7 @@ export function CheckoutPage() {
 
               <div className="mt-8 border-t border-zinc-200 pt-8">
                 <div className="flex items-center justify-between gap-3">
-                  <h2 className="text-2xl font-bold text-zinc-900">Shipping</h2>
+                  <h2 className="text-2xl font-bold text-zinc-900">Envío</h2>
                 </div>
 
                 <div className="mt-5 grid gap-3 sm:grid-cols-2">
@@ -101,7 +101,7 @@ export function CheckoutPage() {
                         : "border-zinc-200 bg-white hover:bg-zinc-50"
                     }`}
                   >
-                    <p className="font-semibold text-zinc-900">Standard shipping</p>
+                    <p className="font-semibold text-zinc-900">Envío estándar</p>
                     <p className="mt-1 text-sm text-zinc-500">$4.99</p>
                   </button>
 
@@ -114,14 +114,14 @@ export function CheckoutPage() {
                         : "border-zinc-200 bg-white hover:bg-zinc-50"
                     }`}
                   >
-                    <p className="font-semibold text-zinc-900">Express shipping</p>
+                    <p className="font-semibold text-zinc-900">Envío exprés</p>
                     <p className="mt-1 text-sm text-zinc-500">$9.99</p>
                   </button>
                 </div>
               </div>
 
               <div className="mt-8 border-t border-zinc-200 pt-8">
-                <h2 className="text-2xl font-bold text-zinc-900">Payment method</h2>
+                <h2 className="text-2xl font-bold text-zinc-900">Método de pago</h2>
 
                 <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-5">
                   <button
@@ -135,7 +135,7 @@ export function CheckoutPage() {
                   >
                     <span className="flex flex-col items-start gap-3 font-semibold">
                       <CreditCard className="h-7 w-7 shrink-0" />
-                      <span className="text-sm">Card</span>
+                      <span className="text-sm">Tarjeta</span>
                     </span>
                   </button>
 
@@ -205,7 +205,7 @@ export function CheckoutPage() {
                     <div className="space-y-4">
                       <div>
                         <label className="mb-2 block text-sm font-medium text-zinc-900">
-                          Card number
+                          Número de tarjeta
                         </label>
                         <input
                           type="text"
@@ -217,18 +217,18 @@ export function CheckoutPage() {
                       <div className="grid gap-3 sm:grid-cols-2">
                         <div>
                           <label className="mb-2 block text-sm font-medium text-zinc-900">
-                            Expiration date
+                            Fecha de vencimiento
                           </label>
                           <input
                             type="text"
-                            placeholder="MM / YY"
+                            placeholder="MM / AA"
                             className="h-12 w-full rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-red-500"
                           />
                         </div>
 
                         <div>
                           <label className="mb-2 block text-sm font-medium text-zinc-900">
-                            Security code
+                            Código de seguridad
                           </label>
                           <input
                             type="text"
@@ -240,10 +240,10 @@ export function CheckoutPage() {
 
                       <div>
                         <label className="mb-2 block text-sm font-medium text-zinc-900">
-                          Country
+                          País
                         </label>
                         <select className="h-12 w-full rounded-xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition focus:border-red-500">
-                          <option>Dominican Republic</option>
+                          <option>República Dominicana</option>
                         </select>
                       </div>
                     </div>
@@ -254,13 +254,13 @@ export function CheckoutPage() {
                   <div className="mt-5 rounded-[28px] border border-zinc-200 bg-zinc-50/70 p-5">
                     <p className="text-sm leading-7 text-zinc-600">
                       {paymentMethod === "googlepay" &&
-                        "A secure Google Pay step will appear after you continue."}
+                        "Al continuar, aparecerá un paso de pago seguro con Google Pay."}
                       {paymentMethod === "cashapp" &&
-                        "A Cash App QR code will appear so you can complete the payment securely."}
+                        "Aparecerá un código QR de Cash App para que completes el pago de forma segura."}
                       {paymentMethod === "amazonpay" &&
-                        "You will be redirected to Amazon Pay to complete the next secure steps."}
+                        "Serás redirigido a Amazon Pay para continuar el pago de forma segura."}
                       {paymentMethod === "paypal" &&
-                        "You will be redirected to PayPal to complete your payment securely."}
+                        "Serás redirigido a PayPal para completar tu pago de forma segura."}
                     </p>
                   </div>
                 )}
@@ -272,24 +272,24 @@ export function CheckoutPage() {
                   disabled={items.length === 0}
                 >
                   <ShoppingCart className="mr-2 h-5 w-5" />
-                  Complete Payment
+                  Completar pago
                 </Button>
 
                 <p className="mt-4 inline-flex w-full items-center justify-center gap-2 text-sm text-zinc-500">
                   <ShieldCheck className="h-4 w-4" />
-                  100% Secure & Safe Payments
+                  Pagos 100 % seguros
                 </p>
               </div>
             </div>
 
             <aside className="h-fit rounded-[32px] border border-zinc-200 bg-white p-6 shadow-[0_16px_50px_rgba(0,0,0,0.05)] md:p-7 lg:sticky lg:top-28">
               <div className="mb-5 flex items-center justify-between gap-3">
-                <h3 className="text-2xl font-bold text-zinc-900">Order summary</h3>
+                <h3 className="text-2xl font-bold text-zinc-900">Resumen del pedido</h3>
                 <Link
                   to="/cart"
                   className="text-sm font-semibold text-red-600 transition hover:underline"
                 >
-                  Edit
+                  Editar
                 </Link>
               </div>
 
@@ -308,7 +308,7 @@ export function CheckoutPage() {
                       <div className="flex min-w-0 flex-1 items-start justify-between gap-2">
                         <div className="min-w-0">
                           <p className="truncate font-semibold text-zinc-900">{item.name}</p>
-                          <p className="text-sm text-zinc-500">Qty: {item.quantity}</p>
+                          <p className="text-sm text-zinc-500">Cant.: {item.quantity}</p>
                         </div>
                         <span className="shrink-0 font-semibold tabular-nums text-zinc-900">
                           ${(item.price * item.quantity).toFixed(2)}
@@ -318,12 +318,12 @@ export function CheckoutPage() {
                   ))}
                 </ul>
               ) : (
-                <p className="mb-4 text-sm text-zinc-500">There are no products in your cart.</p>
+                <p className="mb-4 text-sm text-zinc-500">No hay productos en tu carrito.</p>
               )}
 
               <div className="space-y-3 border-t border-zinc-200 pt-5 text-sm">
                 <p className="flex justify-between">
-                  <span className="text-zinc-500">Items</span>
+                  <span className="text-zinc-500">Productos</span>
                   <span className="font-medium text-zinc-900">{totalItems}</span>
                 </p>
                 <p className="flex justify-between">
@@ -331,11 +331,11 @@ export function CheckoutPage() {
                   <span className="font-medium text-zinc-900">${totalPrice.toFixed(2)}</span>
                 </p>
                 <p className="flex justify-between">
-                  <span className="text-zinc-500">Discount</span>
+                  <span className="text-zinc-500">Descuento</span>
                   <span className="font-medium text-zinc-900">-${discount.toFixed(2)}</span>
                 </p>
                 <p className="flex justify-between">
-                  <span className="text-zinc-500">Shipping</span>
+                  <span className="text-zinc-500">Envío</span>
                   <span className="font-medium text-zinc-900">
                     ${totalItems > 0 ? shippingCost.toFixed(2) : "0.00"}
                   </span>
@@ -352,15 +352,15 @@ export function CheckoutPage() {
               <div className="mt-6 space-y-3">
                 <div className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-700">
                   <Lock className="h-4 w-4 text-red-600" />
-                  Encrypted checkout
+                  Pago cifrado
                 </div>
                 <div className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-700">
                   <Truck className="h-4 w-4 text-red-600" />
-                  Fast shipping available
+                  Envío rápido disponible
                 </div>
                 <div className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-700">
                   <BadgeDollarSign className="h-4 w-4 text-red-600" />
-                  Professional-grade value
+                  Calidad profesional al mejor precio
                 </div>
               </div>
             </aside>

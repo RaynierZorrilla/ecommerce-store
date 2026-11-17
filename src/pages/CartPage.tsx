@@ -24,15 +24,15 @@ export function CartPage() {
             className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-zinc-500 transition hover:text-zinc-900"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to home
+            Volver al inicio
           </Link>
 
           <div className="mb-8">
             <h1 className="text-4xl font-extrabold tracking-tight text-zinc-900 md:text-5xl">
-              My cart
+              Mi carrito
             </h1>
             <p className="mt-3 text-base text-zinc-600 md:text-lg">
-              Review your items before continuing to checkout.
+              Revisa tus productos antes de continuar al pago.
             </p>
           </div>
 
@@ -43,16 +43,16 @@ export function CartPage() {
                   <ShoppingBag className="h-6 w-6" />
                 </div>
 
-                <h2 className="text-2xl font-bold text-zinc-900">Your cart is empty</h2>
+                <h2 className="text-2xl font-bold text-zinc-900">Tu carrito está vacío</h2>
                 <p className="mt-3 max-w-md text-zinc-600">
-                  Add your restoration kit to continue and bring your headlights back to life.
+                  Agrega tu kit de restauración para continuar y devolverles la vida a tus faros.
                 </p>
 
                 <Button
                   asChild
                   className="mt-6 rounded-full bg-red-600 px-6 text-white hover:bg-red-700"
                 >
-                  <Link to="/product-details">View product</Link>
+                  <Link to="/product-details">Ver producto</Link>
                 </Button>
               </div>
             </div>
@@ -83,7 +83,7 @@ export function CartPage() {
                               {item.name}
                             </h2>
                             <p className="mt-1 text-sm text-zinc-500">
-                              Professional headlight restoration kit
+                              Kit profesional de restauración de faros
                             </p>
                           </div>
 
@@ -91,7 +91,7 @@ export function CartPage() {
                             type="button"
                             onClick={() => removeItem(item.id)}
                             className="flex h-10 w-10 items-center justify-center rounded-full text-zinc-400 transition hover:bg-zinc-100 hover:text-zinc-900"
-                            aria-label={`Remove ${item.name}`}
+                            aria-label={`Eliminar ${item.name}`}
                           >
                             <Trash2 className="h-5 w-5" />
                           </button>
@@ -99,10 +99,10 @@ export function CartPage() {
 
                         <div className="mt-5 flex flex-wrap gap-3">
                           <div className="rounded-full border border-zinc-200 bg-zinc-50 px-4 py-2 text-sm text-zinc-700">
-                            Quantity: <span className="font-semibold">{item.quantity}</span>
+                            Cantidad: <span className="font-semibold">{item.quantity}</span>
                           </div>
                           <div className="rounded-full border border-zinc-200 bg-zinc-50 px-4 py-2 text-sm text-zinc-700">
-                            Price: <span className="font-semibold">${item.price.toFixed(2)}</span>
+                            Precio: <span className="font-semibold">${item.price.toFixed(2)}</span>
                           </div>
                         </div>
                       </div>
@@ -112,7 +112,7 @@ export function CartPage() {
               </div>
 
               <div className="h-fit rounded-[28px] border border-zinc-200 bg-white p-6 shadow-[0_12px_40px_rgba(0,0,0,0.05)] md:p-7">
-                <h2 className="text-2xl font-bold text-zinc-900">Order summary</h2>
+                <h2 className="text-2xl font-bold text-zinc-900">Resumen del pedido</h2>
 
                 <div className="mt-6 space-y-4 border-b border-zinc-200 pb-5">
                   <div className="flex items-center justify-between text-sm text-zinc-600">
@@ -120,8 +120,8 @@ export function CartPage() {
                     <span>${totalPrice.toFixed(2)}</span>
                   </div>
                   <div className="flex items-center justify-between text-sm text-zinc-600">
-                    <span>Shipping</span>
-                    <span>Calculated at checkout</span>
+                    <span>Envío</span>
+                    <span>Se calcula al pagar</span>
                   </div>
                 </div>
 
@@ -137,7 +137,7 @@ export function CartPage() {
                     asChild
                     className="h-14 w-full rounded-full bg-red-600 text-base font-semibold text-white shadow-lg shadow-red-600/20 hover:bg-red-700"
                   >
-                    <Link to="/checkout">Checkout</Link>
+                    <Link to="/checkout">Finalizar compra</Link>
                   </Button>
 
                   <Button
@@ -145,22 +145,22 @@ export function CartPage() {
                     onClick={clearCart}
                     className="h-14 w-full rounded-full border-zinc-200 text-base font-semibold"
                   >
-                    Clear cart
+                    Vaciar carrito
                   </Button>
                 </div>
 
                 <div className="mt-6 space-y-3">
                   <div className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-700">
                     <ShieldCheck className="h-4 w-4 text-red-600" />
-                    Secure checkout
+                    Pago seguro
                   </div>
                   <div className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-700">
                     <Truck className="h-4 w-4 text-red-600" />
-                    Fast shipping available
+                    Envío rápido disponible
                   </div>
                   <div className="flex items-center gap-2 rounded-2xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-700">
                     <BadgeDollarSign className="h-4 w-4 text-red-600" />
-                    Professional-grade value
+                    Calidad profesional al mejor precio
                   </div>
                 </div>
               </div>

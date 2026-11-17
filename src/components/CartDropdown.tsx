@@ -34,7 +34,7 @@ export function CartDropdown() {
           type="button"
           onClick={() => setIsVisible(true)}
           className="flex h-14 w-14 items-center justify-center rounded-2xl border border-zinc-200 bg-white/95 text-zinc-900 shadow-[0_10px_30px_rgba(0,0,0,0.10)] backdrop-blur transition hover:bg-white"
-          aria-label="Show cart"
+          aria-label="Mostrar carrito"
         >
           <ChevronLeft className="h-5 w-5" />
         </button>
@@ -52,7 +52,7 @@ export function CartDropdown() {
             setIsVisible(false)
           }}
           className="flex h-12 w-12 items-center justify-center rounded-2xl border border-zinc-200 bg-white/95 text-zinc-700 shadow-[0_8px_20px_rgba(0,0,0,0.08)] backdrop-blur transition hover:bg-white hover:text-zinc-900"
-          aria-label="Hide cart"
+          aria-label="Ocultar carrito"
         >
           <ChevronRight className="h-5 w-5" />
         </button>
@@ -64,10 +64,10 @@ export function CartDropdown() {
             "group relative inline-flex h-16 items-center gap-3 rounded-2xl bg-zinc-950 px-6 text-white shadow-[0_12px_35px_rgba(0,0,0,0.20)] transition-all duration-300 hover:bg-black",
             isCartAnimating && "cart-bump ring-4 ring-red-500/20"
           )}
-          aria-label="Toggle cart"
+          aria-label="Mostrar u ocultar carrito"
         >
           <ShoppingCart className="h-5 w-5" />
-          <span className="text-sm font-semibold md:text-base">Cart</span>
+          <span className="text-sm font-semibold md:text-base">Carrito</span>
 
           {totalItems > 0 && (
             <span className="inline-flex h-8 min-w-8 items-center justify-center rounded-full bg-white px-2 text-sm font-bold text-zinc-950 shadow-sm">
@@ -81,20 +81,20 @@ export function CartDropdown() {
         <div className="mt-3 w-[380px] max-w-[92vw] overflow-hidden rounded-[28px] border border-zinc-200 bg-white/95 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.14)] backdrop-blur-xl">
           <div className="mb-4 flex items-center justify-between">
             <div>
-              <h3 className="text-2xl font-bold text-zinc-900">Items added</h3>
+              <h3 className="text-2xl font-bold text-zinc-900">Productos agregados</h3>
               <p className="mt-1 text-sm text-zinc-500">
                 {items.length === 0
-                  ? "Your cart is currently empty."
-                  : `${totalItems} item${totalItems > 1 ? "s" : ""} in your cart`}
+                  ? "Tu carrito está vacío."
+                  : `${totalItems} producto${totalItems > 1 ? "s" : ""} en tu carrito`}
               </p>
             </div>
           </div>
 
           {items.length === 0 ? (
             <div className="rounded-2xl border border-dashed border-zinc-200 bg-zinc-50 px-5 py-8 text-center">
-              <p className="text-sm text-zinc-500">Your cart is empty.</p>
+              <p className="text-sm text-zinc-500">Tu carrito está vacío.</p>
               <p className="mt-2 text-sm text-zinc-400">
-                Add a kit to get started.
+                Agrega un kit para comenzar.
               </p>
             </div>
           ) : (
@@ -125,7 +125,7 @@ export function CartDropdown() {
                     type="button"
                     onClick={() => removeItem(item.id)}
                     className="flex h-9 w-9 items-center justify-center rounded-full text-zinc-400 transition hover:bg-white hover:text-zinc-900"
-                    aria-label={`Remove ${item.name}`}
+                    aria-label={`Eliminar ${item.name}`}
                   >
                     <X className="h-4 w-4" />
                   </button>
@@ -149,7 +149,7 @@ export function CartDropdown() {
                 className="h-14 rounded-2xl border-zinc-200 text-base font-semibold"
                 onClick={() => setIsOpen(false)}
               >
-                <Link to="/cart">View cart</Link>
+                <Link to="/cart">Ver carrito</Link>
               </Button>
 
               <Button
@@ -157,7 +157,7 @@ export function CartDropdown() {
                 className="h-14 rounded-2xl bg-zinc-950 text-base font-semibold text-white hover:bg-black"
                 onClick={() => setIsOpen(false)}
               >
-                <Link to="/checkout">Complete Order</Link>
+                <Link to="/checkout">Finalizar pedido</Link>
               </Button>
             </div>
           </div>
